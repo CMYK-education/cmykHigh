@@ -568,9 +568,9 @@
     var spotEl = document.getElementById('spotNumber');
     var STORAGE_KEY = 'cmyk_waitlist';
 
-    // Optional: paste a form endpoint (e.g. Formspree) here to receive submissions by email.
-    // Leave empty to store entries locally in the browser.
-    var ENDPOINT = '';
+    // Google Apps Script Web App endpoint (writes to Holly's waitlist sheet + sends emails).
+    // NOTE: verify this URL is live — re-copy from Deploy > Manage deployments if signups don't arrive.
+    var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxlxQLw0-jA7icH_K3w1yezBbYmToofIEII-MJ-gaPXrTn8Ryj-73_tTrqyYP_tTFzu/exec';
 
     function getEntries() {
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
@@ -604,9 +604,10 @@
       }
 
       if (ENDPOINT) {
+        // No custom headers: keeps this a "simple" request so Google Apps Script
+        // doesn't reject it with a CORS preflight. Body is sent as text/plain JSON.
         fetch(ENDPOINT, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(entry)
         }).then(showSuccess).catch(showSuccess);
       } else {

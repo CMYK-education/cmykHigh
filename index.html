@@ -568,9 +568,8 @@
     var spotEl = document.getElementById('spotNumber');
     var STORAGE_KEY = 'cmyk_waitlist';
 
-    // Google Apps Script Web App endpoint (writes to Holly's waitlist sheet + sends emails).
-    // NOTE: verify this URL is live — re-copy from Deploy > Manage deployments if signups don't arrive.
-    var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxlxQLw0-jA7icH_K3w1yezBbYmToofIEII-MJ-gaPXrTn8Ryj-73_tTrqyYP_tTFzu/exec';
+    // Google Apps Script Web App endpoint (writes to Holly's waitlist sheet + sends confirmation/notification emails).
+    var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxlxQLwO-jA7icH_K3w1yezBbYmToofIEII-MJ-gaPXrTn8Ryj-73ItTrqyYP_tTFzu/exec';
 
     function getEntries() {
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }

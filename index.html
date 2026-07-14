@@ -3,222 +3,217 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lodestar Academy — A New Kind of High School in Lehi, Utah</title>
-<meta name="description" content="Lodestar Academy is a small, independent high school in Lehi, Utah for capable but disengaged teens. Personalized AI-guided academics, live human coaching, real mentorship, and outdoor experiential learning." />
+<title>CMYK High — A New Kind of High School in Lehi, Utah</title>
+<meta name="description" content="CMYK High is a small, independent high school in Lehi, Utah for capable but disengaged teens. Personalized AI-guided academics, live human coaching, real mentorship, CTE pathways, and outdoor experiential learning." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --ink: #12211d;
-    --ink-soft: #3b4a45;
-    --paper: #f7f4ec;
-    --paper-2: #efe9dc;
-    --pine: #1f4d3f;
-    --pine-deep: #143329;
-    --moss: #4c7a5f;
-    --gold: #d9a441;
-    --gold-deep: #b9822b;
-    --line: rgba(20, 51, 41, 0.14);
-    --shadow: 0 18px 50px -20px rgba(20, 51, 41, 0.35);
-    --radius: 18px;
+    --cyan: #00A6E6;
+    --magenta: #EC0B8C;
+    --yellow: #FFD400;
+    --key: #14141a;
+    --ink: #14141a;
+    --muted: #5c5c68;
+    --paper: #ffffff;
+    --paper-2: #f5f5f2;
+    --line: rgba(20, 20, 26, 0.12);
+    --shadow: 0 22px 60px -24px rgba(20, 20, 26, 0.4);
+    --radius: 16px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: var(--ink);
-    background: var(--paper);
-    line-height: 1.6;
+    color: var(--ink); background: var(--paper); line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
-  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; line-height: 1.1; font-weight: 600; letter-spacing: -0.01em; }
-
+  h1, h2, h3, .brand { font-family: 'Space Grotesk', system-ui, sans-serif; line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; }
   a { color: inherit; text-decoration: none; }
-
   .wrap { width: min(1120px, 92vw); margin: 0 auto; }
 
+  /* CMYK LOGO MARK */
+  .mark { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 26px; height: 26px; flex: none; }
+  .mark span { border-radius: 50%; display: block; width: 100%; aspect-ratio: 1; }
+  .mark .c { background: var(--cyan); }
+  .mark .m { background: var(--magenta); }
+  .mark .y { background: var(--yellow); }
+  .mark .k { background: var(--key); }
+
   /* NAV */
-  header.nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(247, 244, 236, 0.82);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
-  .brand { display: flex; align-items: center; gap: 11px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; }
-  .brand svg { width: 30px; height: 30px; }
+  header.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; }
+  .brand { display: flex; align-items: center; gap: 11px; font-size: 20px; font-weight: 700; }
+  .brand .name { letter-spacing: -0.03em; }
   .nav-links { display: flex; gap: 30px; align-items: center; font-size: 15px; font-weight: 500; }
-  .nav-links a { color: var(--ink-soft); transition: color .2s; }
-  .nav-links a:hover { color: var(--pine); }
+  .nav-links a { color: var(--muted); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    background: var(--pine); color: var(--paper);
-    padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
-    border: none; cursor: pointer; transition: transform .15s ease, background .2s ease, box-shadow .2s;
-    box-shadow: 0 8px 20px -10px rgba(20,51,41,.6);
+    background: var(--key); color: #fff; padding: 12px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; border: none; cursor: pointer;
+    transition: transform .15s ease, background .2s ease; font-family: 'Inter', sans-serif;
   }
-  .btn:hover { background: var(--pine-deep); transform: translateY(-1px); }
-  .btn.gold { background: var(--gold); color: var(--pine-deep); }
-  .btn.gold:hover { background: var(--gold-deep); color: var(--paper); }
-  .btn.ghost { background: transparent; color: var(--pine); border: 1.5px solid var(--pine); box-shadow: none; }
-  .btn.ghost:hover { background: var(--pine); color: var(--paper); }
-  .nav-links .btn { color: var(--paper); }
-  @media (max-width: 780px) { .nav-links a:not(.btn) { display: none; } }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.cyan { background: var(--cyan); color: #04222d; }
+  .btn.magenta { background: var(--magenta); color: #fff; }
+  .btn.yellow { background: var(--yellow); color: #2b2400; }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: #fff; }
+  .nav-links .btn { color: #fff; }
+  @media (max-width: 820px) { .nav-links a:not(.btn) { display: none; } }
 
   /* HERO */
-  .hero { position: relative; overflow: hidden; background: linear-gradient(160deg, #16362b 0%, #1f4d3f 55%, #2c6349 100%); color: var(--paper); }
+  .hero { position: relative; overflow: hidden; background: var(--key); color: #fff; }
+  .hero .bars { position: absolute; top: 0; left: 0; right: 0; height: 6px; display: flex; z-index: 3; }
+  .hero .bars i { flex: 1; }
+  .hero .bars .c { background: var(--cyan); } .hero .bars .m { background: var(--magenta); }
+  .hero .bars .y { background: var(--yellow); } .hero .bars .k { background: #3a3a44; }
   .hero::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .85;
     background:
-      radial-gradient(1200px 500px at 80% -10%, rgba(217,164,65,.28), transparent 60%),
-      radial-gradient(900px 500px at 0% 110%, rgba(76,122,95,.5), transparent 55%);
+      radial-gradient(680px 420px at 88% -8%, rgba(236,11,140,.30), transparent 62%),
+      radial-gradient(620px 420px at 8% 12%, rgba(0,166,230,.28), transparent 60%),
+      radial-gradient(700px 460px at 60% 118%, rgba(255,212,0,.18), transparent 58%);
   }
-  .ridge { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; display: block; z-index: 1; }
-  .hero-inner { position: relative; z-index: 2; padding: 74px 0 150px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
-  @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; padding: 54px 0 130px; gap: 34px; } }
-
+  .hero-inner { position: relative; z-index: 2; padding: 78px 0 96px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+  @media (max-width: 920px) { .hero-inner { grid-template-columns: 1fr; padding: 58px 0 72px; gap: 34px; } }
   .eyebrow {
-    display: inline-flex; align-items: center; gap: 9px;
-    font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-    color: #f0e2be; background: rgba(217,164,65,.14); border: 1px solid rgba(217,164,65,.4);
+    display: inline-flex; align-items: center; gap: 9px; font-size: 12.5px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase; color: #cdd3da;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16);
     padding: 7px 14px; border-radius: 999px; margin-bottom: 24px;
   }
-  .hero h1 { font-size: clamp(2.5rem, 5.4vw, 4.15rem); font-weight: 600; }
-  .hero h1 em { font-style: italic; color: var(--gold); }
-  .hero p.lead { margin-top: 22px; font-size: clamp(1.05rem, 1.6vw, 1.28rem); color: rgba(247,244,236,.86); max-width: 34ch; }
-  .hero-cta { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero-meta { margin-top: 30px; display: flex; gap: 26px; flex-wrap: wrap; font-size: 14px; color: rgba(247,244,236,.72); }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 700; }
+  .hero h1 .c { color: var(--cyan); } .hero h1 .m { color: var(--magenta); } .hero h1 .y { color: var(--yellow); }
+  .hero p.lead { margin-top: 22px; font-size: clamp(1.05rem, 1.6vw, 1.26rem); color: rgba(255,255,255,.78); max-width: 36ch; }
+  .hero-cta { margin-top: 32px; display: flex; gap: 13px; flex-wrap: wrap; }
+  .hero-meta { margin-top: 30px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: rgba(255,255,255,.66); }
   .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
-  .hero-meta svg { width: 17px; height: 17px; color: var(--gold); }
+  .hero-meta svg { width: 17px; height: 17px; }
 
   /* HERO CARD */
-  .hero-card {
-    background: rgba(247,244,236,.97); color: var(--ink);
-    border-radius: 22px; padding: 30px; box-shadow: var(--shadow);
-    border: 1px solid rgba(255,255,255,.4);
-  }
-  .hero-card h3 { font-size: 1.35rem; }
-  .hero-card p.small { font-size: 14.5px; color: var(--ink-soft); margin-top: 6px; }
+  .hero-card { background: #fff; color: var(--ink); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); }
+  .hero-card h3 { font-size: 1.3rem; }
+  .hero-card p.small { font-size: 14px; color: var(--muted); margin-top: 6px; }
   .pillar-row { display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-top: 1px solid var(--line); }
   .pillar-row:first-of-type { border-top: none; }
-  .pillar-ic { flex: none; width: 40px; height: 40px; border-radius: 11px; background: var(--paper-2); display: grid; place-items: center; color: var(--pine); }
+  .pillar-ic { flex: none; width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; color: #fff; }
   .pillar-ic svg { width: 21px; height: 21px; }
+  .pillar-ic.c { background: var(--cyan); color: #04222d; } .pillar-ic.m { background: var(--magenta); }
+  .pillar-ic.y { background: var(--yellow); color: #2b2400; } .pillar-ic.k { background: var(--key); }
   .pillar-row b { font-size: 15px; }
-  .pillar-row span { font-size: 13.5px; color: var(--ink-soft); display: block; }
+  .pillar-row span { font-size: 13.5px; color: var(--muted); display: block; }
 
   /* SECTIONS */
-  section { padding: 92px 0; }
-  .sec-head { max-width: 720px; margin-bottom: 52px; }
-  .sec-head .tag { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--moss); }
-  .sec-head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); margin-top: 12px; }
-  .sec-head p { font-size: 1.12rem; color: var(--ink-soft); margin-top: 16px; }
-
-  /* PROBLEM band */
+  section { padding: 90px 0; }
+  .sec-head { max-width: 730px; margin-bottom: 50px; }
+  .sec-head .tag { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--magenta); }
+  .sec-head h2 { font-size: clamp(2rem, 3.8vw, 3rem); margin-top: 12px; }
+  .sec-head p { font-size: 1.12rem; color: var(--muted); margin-top: 16px; }
   .band { background: var(--paper-2); }
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 8px; }
+
+  /* STATS */
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   @media (max-width: 760px) { .stat-grid { grid-template-columns: 1fr; } }
-  .stat { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
-  .stat .n { font-family: 'Fraunces', serif; font-size: 2.6rem; color: var(--pine); font-weight: 600; }
-  .stat p { margin-top: 8px; color: var(--ink-soft); font-size: 15px; }
+  .stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; border-top: 4px solid var(--cyan); }
+  .stat:nth-child(2) { border-top-color: var(--magenta); }
+  .stat:nth-child(3) { border-top-color: var(--yellow); }
+  .stat .n { font-family: 'Space Grotesk', sans-serif; font-size: 2.6rem; font-weight: 700; }
+  .stat p { margin-top: 8px; color: var(--muted); font-size: 15px; }
 
-  /* MODEL / pillars */
-  .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  /* CARDS GRID */
+  .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
   @media (max-width: 820px) { .grid-4 { grid-template-columns: 1fr; } }
-  .card {
-    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 32px; transition: transform .2s ease, box-shadow .2s ease;
-  }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; transition: transform .2s ease, box-shadow .2s ease; position: relative; overflow: hidden; }
   .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .card .ic { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(150deg, var(--pine), var(--moss)); display: grid; place-items: center; color: var(--paper); margin-bottom: 18px; }
+  .card .ic { width: 52px; height: 52px; border-radius: 13px; display: grid; place-items: center; color: #fff; margin-bottom: 18px; }
   .card .ic svg { width: 26px; height: 26px; }
-  .card h3 { font-size: 1.4rem; }
-  .card p { margin-top: 10px; color: var(--ink-soft); font-size: 15.5px; }
+  .card .ic.c { background: var(--cyan); color: #04222d; } .card .ic.m { background: var(--magenta); }
+  .card .ic.y { background: var(--yellow); color: #2b2400; } .card .ic.k { background: var(--key); }
+  .card h3 { font-size: 1.35rem; }
+  .card p { margin-top: 10px; color: var(--muted); font-size: 15.5px; }
 
-  /* HOW IT WORKS */
-  .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  /* HOW */
+  .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   @media (max-width: 820px) { .how { grid-template-columns: 1fr; } }
-  .step { position: relative; padding-top: 8px; }
-  .step .num { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--paper); background: var(--pine); width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 16px; }
-  .step h3 { font-size: 1.3rem; }
-  .step p { margin-top: 8px; color: var(--ink-soft); font-size: 15px; }
+  .step .num { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 16px; }
+  .step:nth-child(1) .num { background: var(--cyan); color: #04222d; }
+  .step:nth-child(2) .num { background: var(--magenta); }
+  .step:nth-child(3) .num { background: var(--yellow); color: #2b2400; }
+  .step h3 { font-size: 1.28rem; }
+  .step p { margin-top: 8px; color: var(--muted); font-size: 15px; }
 
-  /* AI + HUMAN split */
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  /* SPLIT */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
   @media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
   .split-card { border-radius: var(--radius); padding: 34px; }
-  .split-card.ai { background: var(--pine-deep); color: var(--paper); }
-  .split-card.human { background: var(--paper); border: 1px solid var(--line); }
-  .split-card h3 { font-size: 1.55rem; }
-  .split-card .kicker { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
-  .split-card.ai .kicker { color: var(--gold); }
-  .split-card.human .kicker { color: var(--moss); }
+  .split-card.ai { background: var(--key); color: #fff; }
+  .split-card.human { background: #fff; border: 1px solid var(--line); }
+  .split-card .kicker { font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
+  .split-card.ai .kicker { color: var(--cyan); }
+  .split-card.human .kicker { color: var(--magenta); }
+  .split-card h3 { font-size: 1.5rem; margin-top: 6px; }
   .split-card ul { list-style: none; margin-top: 18px; }
   .split-card li { display: flex; gap: 11px; padding: 9px 0; font-size: 15.5px; }
   .split-card li svg { flex: none; width: 20px; height: 20px; margin-top: 2px; }
-  .split-card.ai li svg { color: var(--gold); }
-  .split-card.human li svg { color: var(--pine); }
-  .split-card.ai p.mut { color: rgba(247,244,236,.72); margin-top: 6px; }
-  .split-card.human p.mut { color: var(--ink-soft); margin-top: 6px; }
+  .split-card.ai li svg { color: var(--cyan); }
+  .split-card.human li svg { color: var(--magenta); }
+  .split-card p.mut { margin-top: 6px; font-size: 15px; }
+  .split-card.ai p.mut { color: rgba(255,255,255,.66); }
+  .split-card.human p.mut { color: var(--muted); }
 
   /* WAITLIST */
-  .waitlist { background: linear-gradient(160deg, #1f4d3f, #143329); color: var(--paper); }
-  .wl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .waitlist { background: var(--key); color: #fff; }
+  .wl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   @media (max-width: 860px) { .wl-grid { grid-template-columns: 1fr; gap: 34px; } }
-  .waitlist h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
-  .waitlist .tag { color: var(--gold); }
-  .waitlist p.lead { color: rgba(247,244,236,.85); margin-top: 16px; font-size: 1.1rem; }
-  .wl-perks { margin-top: 26px; list-style: none; }
-  .wl-perks li { display: flex; gap: 11px; padding: 8px 0; color: rgba(247,244,236,.9); font-size: 15.5px; }
-  .wl-perks svg { flex: none; width: 20px; height: 20px; color: var(--gold); margin-top: 2px; }
-
-  .form-card { background: var(--paper); color: var(--ink); border-radius: 22px; padding: 34px; box-shadow: var(--shadow); }
+  .waitlist .tag { color: var(--yellow); font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .waitlist h2 { font-size: clamp(2rem, 3.8vw, 3rem); margin-top: 12px; }
+  .waitlist p.lead { color: rgba(255,255,255,.8); margin-top: 16px; font-size: 1.1rem; }
+  .wl-perks { margin-top: 24px; list-style: none; }
+  .wl-perks li { display: flex; gap: 11px; padding: 8px 0; color: rgba(255,255,255,.88); font-size: 15.5px; }
+  .wl-perks svg { flex: none; width: 20px; height: 20px; color: var(--yellow); margin-top: 2px; }
+  .form-card { background: #fff; color: var(--ink); border-radius: 20px; padding: 32px; box-shadow: var(--shadow); border-top: 6px solid var(--magenta); }
   .form-card h3 { font-size: 1.5rem; }
-  .form-card > p { color: var(--ink-soft); font-size: 15px; margin-top: 6px; margin-bottom: 22px; }
-  .field { margin-bottom: 16px; }
-  .field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
+  .form-card > p { color: var(--muted); font-size: 15px; margin-top: 6px; margin-bottom: 22px; }
+  .field { margin-bottom: 15px; }
+  .field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 6px; }
   .field input, .field select, .field textarea {
-    width: 100%; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 12px;
-    font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper);
+    width: 100%; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 11px;
+    font-family: inherit; font-size: 15px; color: var(--ink); background: #fff;
     transition: border-color .2s, box-shadow .2s;
   }
-  .field input:focus, .field select:focus, .field textarea:focus {
-    outline: none; border-color: var(--pine); box-shadow: 0 0 0 3px rgba(31,77,63,.14);
-  }
-  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--magenta); box-shadow: 0 0 0 3px rgba(236,11,140,.14); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
   @media (max-width: 460px) { .row2 { grid-template-columns: 1fr; } }
   .form-card button { width: 100%; margin-top: 8px; padding: 15px; font-size: 16px; }
-  .form-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 14px; text-align: center; }
-  .form-success {
-    display: none; text-align: center; padding: 20px 6px;
-  }
-  .form-success .badge { width: 62px; height: 62px; border-radius: 50%; background: rgba(76,122,95,.15); color: var(--pine); display: grid; place-items: center; margin: 0 auto 16px; }
+  .form-note { font-size: 12.5px; color: var(--muted); margin-top: 14px; text-align: center; }
+  .form-success { display: none; text-align: center; padding: 20px 6px; }
+  .form-success .badge { width: 62px; height: 62px; border-radius: 50%; background: rgba(236,11,140,.12); color: var(--magenta); display: grid; place-items: center; margin: 0 auto 16px; }
   .form-success .badge svg { width: 30px; height: 30px; }
   .form-success h3 { font-size: 1.5rem; }
-  .form-success p { color: var(--ink-soft); margin-top: 10px; font-size: 15px; }
-  .spot { display: inline-block; margin-top: 16px; font-weight: 600; color: var(--pine); background: var(--paper-2); padding: 8px 16px; border-radius: 999px; font-size: 14px; }
+  .form-success p { color: var(--muted); margin-top: 10px; font-size: 15px; }
+  .spot { display: inline-block; margin-top: 16px; font-weight: 600; color: var(--ink); background: var(--paper-2); padding: 8px 16px; border-radius: 999px; font-size: 14px; }
 
   /* FAQ */
-  details { border-bottom: 1px solid var(--line); padding: 6px 0; }
-  details summary { cursor: pointer; list-style: none; padding: 20px 0; font-weight: 600; font-size: 1.12rem; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-family: 'Fraunces', serif; }
+  details { border-bottom: 1px solid var(--line); }
+  details summary { cursor: pointer; list-style: none; padding: 20px 0; font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-family: 'Space Grotesk', sans-serif; }
   details summary::-webkit-details-marker { display: none; }
-  details summary .chev { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--paper-2); display: grid; place-items: center; transition: transform .2s, background .2s; }
-  details[open] summary .chev { transform: rotate(45deg); background: var(--pine); color: var(--paper); }
-  details p { padding: 0 0 22px; color: var(--ink-soft); max-width: 72ch; }
+  details summary .chev { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--paper-2); display: grid; place-items: center; transition: transform .2s, background .2s, color .2s; }
+  details[open] summary .chev { transform: rotate(45deg); background: var(--magenta); color: #fff; }
+  details p { padding: 0 0 22px; color: var(--muted); max-width: 72ch; }
 
   /* FOOTER */
-  footer { background: var(--pine-deep); color: rgba(247,244,236,.72); padding: 56px 0 34px; }
-  .foot-top { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding-bottom: 30px; border-bottom: 1px solid rgba(247,244,236,.14); }
-  .foot-top .brand { color: var(--paper); }
+  footer { background: var(--key); color: rgba(255,255,255,.66); padding: 54px 0 32px; }
+  .foot-top { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .foot-top .brand { color: #fff; }
   .foot-cols { display: flex; gap: 60px; flex-wrap: wrap; }
-  .foot-cols h4 { color: var(--paper); font-family: 'Inter'; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+  .foot-cols h4 { color: #fff; font-family: 'Inter'; font-size: 12.5px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
   .foot-cols a { display: block; padding: 4px 0; font-size: 14.5px; transition: color .2s; }
-  .foot-cols a:hover { color: var(--gold); }
-  .foot-bottom { padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .foot-cols a:hover { color: var(--cyan); }
+  .foot-bottom { padding-top: 22px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 </style>
 </head>
 <body>
@@ -227,13 +222,13 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">
-      <svg viewBox="0 0 32 32" fill="none"><path d="M16 2l3.4 8.9L28 12l-6.5 6 1.8 9.2L16 22.7 8.7 27.2 10.5 18 4 12l8.6-1.1L16 2z" fill="#d9a441"/><circle cx="16" cy="14.5" r="3.1" fill="#143329"/></svg>
-      Lodestar <span style="color:var(--gold); margin-left:-6px;">Academy</span>
+      <span class="mark"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></span>
+      <span class="name">CMYK High</span>
     </a>
     <nav class="nav-links">
       <a href="#model">The Model</a>
+      <a href="#pathways">CTE Pathways</a>
       <a href="#how">How It Works</a>
-      <a href="#experience">Experience</a>
       <a href="#faq">FAQ</a>
       <a href="#waitlist" class="btn">Join the Waitlist</a>
     </nav>
@@ -242,49 +237,49 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
+  <div class="bars"><i class="c"></i><i class="m"></i><i class="y"></i><i class="k"></i></div>
   <div class="wrap hero-inner">
     <div>
       <span class="eyebrow">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>
-        Lehi, Utah &nbsp;·&nbsp; Opening for the class of tomorrow
+        Lehi, Utah &nbsp;·&nbsp; Now enrolling our founding class
       </span>
-      <h1>Bright kids don't need more school.<br>They need a <em>better one.</em></h1>
-      <p class="lead">A small, independent high school for capable but disengaged teens — where personalized AI-guided learning is paired with real human coaching, mentorship, and time in the mountains.</p>
+      <h1>Four colors make <span class="c">every</span> <span class="m">shade</span> <span class="y">imaginable.</span></h1>
+      <p class="lead">A small, independent high school in Lehi for capable but disengaged teens — where personalized AI-guided learning meets real human coaching, mentorship, career pathways, and time outside.</p>
       <div class="hero-cta">
-        <a href="#waitlist" class="btn gold">Reserve Your Spot →</a>
-        <a href="#model" class="btn ghost" style="color:var(--paper); border-color:rgba(247,244,236,.5);">See How It Works</a>
+        <a href="#waitlist" class="btn magenta">Reserve Your Spot →</a>
+        <a href="#model" class="btn ghost" style="color:#fff; border-color:rgba(255,255,255,.45);">See How It Works</a>
       </div>
       <div class="hero-meta">
-        <span><svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8" stroke="currentColor" stroke-width="2"/></svg> Small cohorts, ~10:1 with coaches</span>
-        <span><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z" stroke="currentColor" stroke-width="2"/></svg> Grades 9–12</span>
-        <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Weekly outdoor field days</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8" stroke-width="2"/></svg> Small cohorts, ~10:1 with coaches</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--magenta)"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z" stroke-width="2"/></svg> Grades 9–12</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)"><path d="M3 20l6-14 4 8 3-5 5 11" stroke-width="2" stroke-linejoin="round"/></svg> CTE pathways + field days</span>
       </div>
     </div>
 
     <div class="hero-card">
       <h3>Four things we get right</h3>
-      <p class="small">The pieces every teen needs — finally under one roof.</p>
-      <div style="margin-top:18px;">
+      <p class="small">Like CMYK inks, the pieces combine into something no single one could be.</p>
+      <div style="margin-top:16px;">
         <div class="pillar-row">
-          <div class="pillar-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5L21 12M3 16.5L12 21l9-4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <div class="pillar-ic c"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5L21 12M3 16.5L12 21l9-4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
           <div><b>Personalized academics</b><span>AI tutors master the material at each student's pace.</span></div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div class="pillar-ic m"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8"/></svg></div>
           <div><b>Human skills</b><span>Communication, judgment, grit, collaboration.</span></div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
-          <div><b>Real mentorship</b><span>Every student is known by a coach who's in their corner.</span></div>
+          <div class="pillar-ic y"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
+          <div><b>Mentorship + CTE pathways</b><span>A coach in their corner and a real career direction.</span></div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-          <div><b>Outdoor learning</b><span>Wasatch trails, rivers, and expeditions as the classroom.</span></div>
+          <div class="pillar-ic k"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <div><b>Outdoor experiential</b><span>Wasatch trails and hands-on learning as the classroom.</span></div>
         </div>
       </div>
     </div>
   </div>
-  <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 120V78l180-46 150 40 210-64 180 52 200-70 190 60 180-40V120z" fill="#f7f4ec"/></svg>
 </section>
 
 <!-- PROBLEM -->
@@ -293,12 +288,12 @@
     <div class="sec-head">
       <span class="tag">The problem we're solving</span>
       <h2>Capable teens are checking out — and the system can't reach them.</h2>
-      <p>Bright, curious kids get lost in classrooms built for the average. They're not struggling because they can't do the work. They're disengaged because nothing asks the best of them.</p>
+      <p>Bright kids get lost in classrooms built for the average. School refusal, lost confidence, boredom, a bad early experience — they're not struggling because they can't. They're checked out because nothing asks the best of them, and no one path fits every color.</p>
     </div>
     <div class="stat-grid">
-      <div class="stat"><div class="n">1 in 3</div><p>high schoolers say they feel disengaged or "just going through the motions" at school.</p></div>
-      <div class="stat"><div class="n">2×</div><p>faster mastery is possible with one-on-one, adaptive instruction versus a lecture pace.</p></div>
-      <div class="stat"><div class="n">65%</div><p>of the jobs today's teens will hold reward human skills that school rarely teaches.</p></div>
+      <div class="stat"><div class="n" style="color:var(--cyan)">1 in 3</div><p>high schoolers say they feel disengaged or "just going through the motions."</p></div>
+      <div class="stat"><div class="n" style="color:var(--magenta)">2×</div><p>faster mastery is possible with one-on-one, adaptive instruction versus a lecture pace.</p></div>
+      <div class="stat"><div class="n" style="color:#caa900">65%</div><p>of the jobs today's teens will hold reward skills and pathways school rarely teaches.</p></div>
     </div>
   </div>
 </section>
@@ -307,28 +302,28 @@
 <section id="model">
   <div class="wrap">
     <div class="sec-head">
-      <span class="tag">The Lodestar model</span>
+      <span class="tag">The CMYK model</span>
       <h2>School, rebuilt around the student.</h2>
-      <p>We stripped away the parts of high school that waste a teenager's time and kept the parts that change a life — then rebuilt the rest.</p>
+      <p>We kept the parts of high school that change a life and rebuilt the rest — four elements that layer together like process inks into a full-color education.</p>
     </div>
     <div class="grid-4">
       <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5L21 12M3 16.5L12 21l9-4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div class="ic c"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5L21 12M3 16.5L12 21l9-4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
         <h3>Focused, personalized academics</h3>
-        <p>Best-in-class AI tutors deliver core academics one-on-one, adapting to each student's pace and gaps. Master more in two focused hours than a whole day of lectures — then spend the rest of the day doing.</p>
+        <p>Best-in-class AI tutors deliver core academics one-on-one, adapting to each student's pace and gaps — including fast credit recovery and an accelerated path for those ready to move. Master more in two focused hours than a whole day of lectures.</p>
       </div>
       <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div class="ic m"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8"/></svg></div>
         <h3>Human skills, taught on purpose</h3>
-        <p>Communication, critical thinking, collaboration, self-management, and character. These aren't extracurricular here — they're the core curriculum, practiced daily in real projects and discussion.</p>
+        <p>Communication, critical thinking, collaboration, self-management, and character. These aren't extracurricular here — they're core curriculum, practiced daily in real projects and discussion.</p>
       </div>
       <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
-        <h3>Coaches and mentorship</h3>
-        <p>Every student has a dedicated coach who knows them, tracks their growth, and holds them to a high bar. Live teaching classes and adult mentors turn potential into momentum.</p>
+        <div class="ic y"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
+        <h3>Mentorship + CTE pathways</h3>
+        <p>Every student has a dedicated coach who knows them and holds a high bar — plus a real career direction. CTE pathways connect learning to skilled trades, tech, design, and business through hands-on work.</p>
       </div>
       <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div class="ic k"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
         <h3>Outdoor experiential learning</h3>
         <p>The Wasatch is our second campus. Weekly expeditions, service, and hands-on challenges build resilience, teamwork, and a body that's as engaged as the mind.</p>
       </div>
@@ -336,8 +331,41 @@
   </div>
 </section>
 
-<!-- AI + HUMAN SPLIT -->
-<section class="band" id="taught">
+<!-- CTE PATHWAYS -->
+<section class="band" id="pathways">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Career &amp; technical education</span>
+      <h2>A real direction — not just a diploma.</h2>
+      <p>Every student explores CTE pathways that turn "why does this matter?" into "I'm building something." Real skills, real credentials, real momentum toward work worth doing.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="ic c"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3M9 9h6v6H9z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Design &amp; digital media</h3>
+        <p>Graphic design, video, and creative tools — a natural fit for visual, creative thinkers.</p>
+      </div>
+      <div class="card">
+        <div class="ic m"><svg viewBox="0 0 24 24" fill="none"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Technology &amp; making</h3>
+        <p>Coding, AI, robotics, and hands-on fabrication — building things that actually work.</p>
+      </div>
+      <div class="card">
+        <div class="ic y"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-6h4v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Skilled trades &amp; business</h3>
+        <p>Entrepreneurship, construction, and the trades — pathways to independence and real earning.</p>
+      </div>
+      <div class="card">
+        <div class="ic k"><svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Internships &amp; certifications</h3>
+        <p>Work-based learning and industry credentials that mean something after graduation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT -->
+<section id="taught">
   <div class="wrap">
     <div class="sec-head">
       <span class="tag">Taught by AI · coached by humans</span>
@@ -352,8 +380,8 @@
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> One-on-one instruction that never rushes or leaves a gap</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Adapts in real time to how each student learns</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Mastery-based — you advance when you actually get it</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Frees up the day for projects, people, and the outdoors</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Mastery-based — including fast credit recovery and acceleration</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Frees the day for projects, people, pathways, and the outdoors</li>
         </ul>
       </div>
       <div class="split-card human">
@@ -364,20 +392,20 @@
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Daily live teaching, seminars, and Socratic discussion</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> A mentor who knows each student's goals and struggles</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Accountability, motivation, and a genuinely high bar</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Leads the expeditions, projects, and character work</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Leads the expeditions, CTE projects, and character work</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how">
+<!-- HOW -->
+<section class="band" id="how">
   <div class="wrap">
     <div class="sec-head">
-      <span class="tag">A day at Lodestar</span>
+      <span class="tag">A day at CMYK</span>
       <h2>Mornings for mastery. Afternoons for the world.</h2>
-      <p>A rhythm designed to re-engage — deep focus when the mind is fresh, then hands-on human work and time outside.</p>
+      <p>A rhythm designed to re-engage — deep focus when the mind is fresh, then hands-on human work, pathways, and time outside.</p>
     </div>
     <div class="how">
       <div class="step">
@@ -387,46 +415,13 @@
       </div>
       <div class="step">
         <div class="num">2</div>
-        <h3>Seminars & human skills</h3>
+        <h3>Seminars &amp; human skills</h3>
         <p>Midday brings live, coach-led discussion, debate, writing, and collaborative projects — where teens practice thinking out loud and working with others.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
-        <h3>Experience & expedition</h3>
-        <p>Afternoons and weekly field days move learning into the real world: the Wasatch trails, service projects, internships, and hands-on builds.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE / OUTDOOR -->
-<section class="band" id="experience">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag">Rooted in Lehi, Utah</span>
-      <h2>The mountains are part of the curriculum.</h2>
-      <p>Minutes from the Wasatch Front, Lodestar uses Utah's backyard to build the grit, presence, and teamwork a screen never can.</p>
-    </div>
-    <div class="grid-4">
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-        <h3>Weekly field days</h3>
-        <p>Hiking, climbing, and river days that double as classrooms for science, teamwork, and resilience.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <h3>Real-world projects</h3>
-        <p>Internships, ventures, and community work where academics meet the actual world.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
-        <h3>A place they belong</h3>
-        <p>A small community where every teen is known — and a high bar feels like belonging, not pressure.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8V4l8 4-8 4M12 8H4v8h8m0-8v12" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-        <h3>Expeditions & service</h3>
-        <p>Multi-day trips and service that turn textbook lessons into memories and character.</p>
+        <h3>Pathways &amp; expedition</h3>
+        <p>Afternoons and weekly field days move learning into the real world: CTE projects, internships, the Wasatch trails, and hands-on builds.</p>
       </div>
     </div>
   </div>
@@ -436,12 +431,12 @@
 <section class="waitlist" id="waitlist">
   <div class="wrap wl-grid">
     <div>
-      <span class="tag" style="font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;">Founding families</span>
+      <span class="tag">Founding families</span>
       <h2>Join the waitlist.</h2>
-      <p class="lead">We're enrolling a small founding cohort in Lehi, Utah. Add your family to the waitlist to get first access, invitations to info sessions, and a voice in what we build.</p>
+      <p class="lead">We're enrolling a small founding cohort in Lehi, Utah. Add your family to the waitlist for first access, invitations to info sessions, and a voice in what we build.</p>
       <ul class="wl-perks">
         <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority admission for founding families</li>
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Invitations to parent & student info nights</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Invitations to parent &amp; student info nights</li>
         <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Founding-family tuition consideration</li>
         <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> No commitment — just early access and updates</li>
       </ul>
@@ -482,14 +477,14 @@
           <label for="notes">What's your teen like? (optional)</label>
           <textarea id="notes" name="notes" rows="3" placeholder="Tell us a little about your student and what you're hoping to find."></textarea>
         </div>
-        <button type="submit" class="btn gold">Join the Waitlist →</button>
-        <p class="form-note">By joining you agree to receive occasional updates about Lodestar Academy. We never share your information.</p>
+        <button type="submit" class="btn magenta">Join the Waitlist →</button>
+        <p class="form-note">By joining you agree to receive occasional updates about CMYK High. We never share your information.</p>
       </form>
 
       <div class="form-success" id="formSuccess">
         <div class="badge"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>You're on the list!</h3>
-        <p id="successMsg">Thanks for joining the Lodestar Academy founding waitlist. We'll reach out soon with next steps and an invitation to our first info session.</p>
+        <p id="successMsg">Thanks for joining the CMYK High founding waitlist. We'll reach out soon with next steps and an invitation to our first info session.</p>
         <span class="spot" id="spotNumber"></span>
       </div>
     </div>
@@ -505,16 +500,20 @@
     </div>
     <div style="max-width:820px;">
       <details open>
-        <summary>Is this really "taught by AI"? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>Core academics are delivered one-on-one by best-in-class AI tutors, which lets every student learn at their own pace and reach true mastery. But learning is coached, guided, and mentored by real adults every single day. The AI handles instruction; humans handle the human — motivation, discussion, character, and relationship.</p>
+        <summary>Why "CMYK"? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
+        <p>CMYK is the four inks — cyan, magenta, yellow, and black — that layer together to make every color you've ever seen. It's how we see our students: each one distinct, each essential, and capable of far more in combination than any single track allows. It also nods to the creative, hands-on, design-and-make spirit of our CTE pathways.</p>
       </details>
       <details>
-        <summary>Who is Lodestar the right fit for? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>Capable teens who have become bored, disengaged, or lost in a traditional classroom — kids who could do more than their current school is asking of them. If your student is bright but "checked out," this was built for them.</p>
+        <summary>Who is CMYK High the right fit for? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
+        <p>Capable teens who've become bored, disengaged, or lost in a traditional classroom — including school refusal, lost confidence from an earlier rough experience, kids who need credit recovery, kids ready to accelerate, and bright students who simply learn differently. If your student is capable but "checked out," this was built for them.</p>
       </details>
       <details>
         <summary>Where is the school located? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>Lodestar Academy is based in Lehi, Utah, on the Wasatch Front — with the mountains, canyons, and rivers of northern Utah serving as our outdoor campus for weekly field days and expeditions.</p>
+        <p>CMYK High is based in Lehi, Utah, on the Wasatch Front — with the mountains, canyons, and rivers of northern Utah serving as our outdoor campus for weekly field days and expeditions.</p>
+      </details>
+      <details>
+        <summary>What are CTE pathways? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
+        <p>Career &amp; Technical Education pathways connect academics to real careers — design and digital media, technology and making, skilled trades and business — through hands-on projects, internships, and industry credentials. They give students a reason for the work and a head start on a future.</p>
       </details>
       <details>
         <summary>How big are the cohorts? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
@@ -534,8 +533,8 @@
     <div class="foot-top">
       <div>
         <a href="#top" class="brand">
-          <svg viewBox="0 0 32 32" fill="none"><path d="M16 2l3.4 8.9L28 12l-6.5 6 1.8 9.2L16 22.7 8.7 27.2 10.5 18 4 12l8.6-1.1L16 2z" fill="#d9a441"/><circle cx="16" cy="14.5" r="3.1" fill="#143329"/></svg>
-          Lodestar Academy
+          <span class="mark"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></span>
+          <span class="name">CMYK High</span>
         </a>
         <p style="margin-top:12px; max-width:34ch;">A new kind of high school for capable, disengaged teens. Lehi, Utah.</p>
       </div>
@@ -543,21 +542,21 @@
         <div>
           <h4>Explore</h4>
           <a href="#model">The Model</a>
+          <a href="#pathways">CTE Pathways</a>
           <a href="#how">How It Works</a>
-          <a href="#experience">Experience</a>
           <a href="#faq">FAQ</a>
         </div>
         <div>
           <h4>Get involved</h4>
           <a href="#waitlist">Join the Waitlist</a>
           <a href="#waitlist">Info Sessions</a>
-          <a href="mailto:hello@lodestaracademy.org">Contact Us</a>
+          <a href="mailto:hello@cmykhigh.com">Contact Us</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Lodestar Academy · Lehi, Utah</span>
-      <span>Personalized academics · Human skills · Mentorship · Outdoor learning</span>
+      <span>© 2026 CMYK High · Lehi, Utah</span>
+      <span>Personalized academics · Human skills · Mentorship · CTE · Outdoor learning</span>
     </div>
   </div>
 </footer>
@@ -567,7 +566,7 @@
     var form = document.getElementById('waitlistForm');
     var success = document.getElementById('formSuccess');
     var spotEl = document.getElementById('spotNumber');
-    var STORAGE_KEY = 'lodestar_waitlist';
+    var STORAGE_KEY = 'cmyk_waitlist';
 
     // Optional: paste a form endpoint (e.g. Formspree) here to receive submissions by email.
     // Leave empty to store entries locally in the browser.
@@ -580,7 +579,6 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-
       if (!form.checkValidity()) { form.reportValidity(); return; }
 
       var entry = {
@@ -592,12 +590,11 @@
         submittedAt: new Date().toISOString()
       };
 
-      // Save locally so no signup is ever lost.
       var entries = getEntries();
       entries.push(entry);
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify(entries)); } catch (e) {}
 
-      var spot = 27 + entries.length; // founding-cohort flavor
+      var spot = 27 + entries.length;
       spotEl.textContent = "You're #" + spot + " on the founding waitlist";
 
       function showSuccess() {
@@ -606,7 +603,6 @@
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
 
-      // If an endpoint is configured, forward the submission too.
       if (ENDPOINT) {
         fetch(ENDPOINT, {
           method: 'POST',

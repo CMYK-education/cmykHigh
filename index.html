@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CMYK High — A New Kind of High School in Lehi, Utah</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<meta name="description" content="CMYK High is a small, independent high school in Lehi, Utah for capable but disengaged teens. Personalized AI-guided academics, live human coaching, real mentorship, CTE pathways, and outdoor experiential learning." />
+<meta name="description" content="CMYK High is a small, independent high school in Lehi, Utah for capable but disengaged teens. Personalized AI-guided academics, live coaching, human skills with visible growth, real-world pathways, and outdoor experiential learning." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -89,7 +89,7 @@
   }
   .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 700; }
   .hero h1 .c { color: var(--cyan); } .hero h1 .m { color: var(--magenta); } .hero h1 .y { color: var(--yellow); }
-  .hero p.lead { margin-top: 22px; font-size: clamp(1.05rem, 1.6vw, 1.26rem); color: rgba(255,255,255,.78); max-width: 36ch; }
+  .hero p.lead { margin-top: 22px; font-size: clamp(1.05rem, 1.6vw, 1.26rem); color: rgba(255,255,255,.78); max-width: 38ch; }
   .hero-cta { margin-top: 32px; display: flex; gap: 13px; flex-wrap: wrap; }
   .hero-meta { margin-top: 30px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: rgba(255,255,255,.66); }
   .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
@@ -101,8 +101,7 @@
   .hero-card p.small { font-size: 14px; color: var(--muted); margin-top: 6px; }
   .pillar-row { display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-top: 1px solid var(--line); }
   .pillar-row:first-of-type { border-top: none; }
-  .pillar-ic { flex: none; width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; color: #fff; }
-  .pillar-ic svg { width: 21px; height: 21px; }
+  .pillar-ic { flex: none; width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; }
   .pillar-ic.c { background: var(--cyan); color: #04222d; } .pillar-ic.m { background: var(--magenta); }
   .pillar-ic.y { background: var(--yellow); color: #2b2400; } .pillar-ic.k { background: var(--key); }
   .pillar-row b { font-size: 15px; }
@@ -116,14 +115,54 @@
   .sec-head p { font-size: 1.12rem; color: var(--muted); margin-top: 16px; }
   .band { background: var(--paper-2); }
 
-  /* STATS */
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  @media (max-width: 760px) { .stat-grid { grid-template-columns: 1fr; } }
-  .stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; border-top: 4px solid var(--cyan); }
-  .stat:nth-child(2) { border-top-color: var(--magenta); }
-  .stat:nth-child(3) { border-top-color: var(--yellow); }
-  .stat .n { font-family: 'Space Grotesk', sans-serif; font-size: 2.6rem; font-weight: 700; }
-  .stat p { margin-top: 8px; color: var(--muted); font-size: 15px; }
+  /* PROBLEM PROVOCATION */
+  .provocation {
+    margin-top: 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: clamp(28px, 4vw, 40px);
+    max-width: 820px;
+  }
+  .provocation .q {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .provocation .q em {
+    font-style: normal;
+    color: var(--magenta);
+  }
+  .provocation p {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 58ch;
+  }
+  .problem-points {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 820px;
+  }
+  @media (max-width: 760px) { .problem-points { grid-template-columns: 1fr; } }
+  .problem-points article {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .problem-points h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+  .problem-points p {
+    color: var(--muted);
+    font-size: 14.5px;
+  }
 
   /* CARDS GRID */
   .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
@@ -134,16 +173,29 @@
   .card .ic svg { width: 26px; height: 26px; }
   .card .ic.c { background: var(--cyan); color: #04222d; } .card .ic.m { background: var(--magenta); }
   .card .ic.y { background: var(--yellow); color: #2b2400; } .card .ic.k { background: var(--key); }
+  .card .ic.neutral { background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); }
   .card h3 { font-size: 1.35rem; }
   .card p { margin-top: 10px; color: var(--muted); font-size: 15.5px; }
+  .card .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .card .chips span {
+    font-size: 12.5px; font-weight: 600; padding: 5px 10px; border-radius: 999px;
+    background: var(--paper-2); color: var(--ink); border: 1px solid var(--line);
+  }
+
+  /* GROWTH SCALE */
+  .growth-scale {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; max-width: 820px;
+  }
+  .growth-scale span {
+    font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; color: var(--muted);
+  }
+  .growth-scale span.active { color: var(--ink); border-color: var(--ink); }
 
   /* HOW */
   .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   @media (max-width: 820px) { .how { grid-template-columns: 1fr; } }
-  .step .num { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 16px; }
-  .step:nth-child(1) .num { background: var(--cyan); color: #04222d; }
-  .step:nth-child(2) .num { background: var(--magenta); }
-  .step:nth-child(3) .num { background: var(--yellow); color: #2b2400; }
+  .step .num { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 16px; background: var(--key); }
   .step h3 { font-size: 1.28rem; }
   .step p { margin-top: 8px; color: var(--muted); font-size: 15px; }
 
@@ -228,7 +280,8 @@
     </a>
     <nav class="nav-links">
       <a href="#model">The Model</a>
-      <a href="#pathways">CTE Pathways</a>
+      <a href="#skills">Human Skills</a>
+      <a href="#pathways">Pathways</a>
       <a href="#how">How It Works</a>
       <a href="#faq">FAQ</a>
       <a href="#waitlist" class="btn">Join the Waitlist</a>
@@ -245,38 +298,38 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>
         Lehi, Utah &nbsp;·&nbsp; Now enrolling our founding class
       </span>
-      <h1>Four colors make <span class="c">every</span> <span class="m">shade</span> <span class="y">imaginable.</span></h1>
-      <p class="lead">A small, independent high school in Lehi for capable but disengaged teens — where personalized AI-guided learning meets real human coaching, mentorship, career pathways, and time outside.</p>
+      <h1>School that answers <span class="c">why</span> <span class="m">the</span> <span class="y">work</span> matters.</h1>
+      <p class="lead">CMYK High is a small, independent high school for capable but disengaged teens — personalized AI academics, live coaches, human skills you can see grow, and time in the real world.</p>
       <div class="hero-cta">
-        <a href="#waitlist" class="btn magenta">Reserve Your Spot →</a>
+        <a href="#waitlist" class="btn magenta">Join the Waitlist →</a>
         <a href="#model" class="btn ghost" style="color:#fff; border-color:rgba(255,255,255,.45);">See How It Works</a>
       </div>
       <div class="hero-meta">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8" stroke-width="2"/></svg> Small cohorts, ~10:1 with coaches</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8" stroke-width="2"/></svg> Small cohorts with dedicated coaches</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--magenta)"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z" stroke-width="2"/></svg> Grades 9–12</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)"><path d="M3 20l6-14 4 8 3-5 5 11" stroke-width="2" stroke-linejoin="round"/></svg> CTE pathways + field days</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)"><path d="M3 20l6-14 4 8 3-5 5 11" stroke-width="2" stroke-linejoin="round"/></svg> Human skills + outdoor learning</span>
       </div>
     </div>
 
     <div class="hero-card">
-      <h3>Four things we get right</h3>
-      <p class="small">Like CMYK inks, the pieces combine into something no single one could be.</p>
+      <h3>Human skills, in four colors</h3>
+      <p class="small">CMYK isn’t decoration. It’s how we organize the skills that make school matter again.</p>
       <div style="margin-top:16px;">
         <div class="pillar-row">
-          <div class="pillar-ic c"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5L21 12M3 16.5L12 21l9-4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-          <div><b>Personalized academics</b><span>AI tutors master the material at each student's pace.</span></div>
+          <div class="pillar-ic c">C</div>
+          <div><b>Personal</b><span>Passion and Self Management — desire to learn, systems for time and materials, follow-through.</span></div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-ic m"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8"/></svg></div>
-          <div><b>Human skills that stick</b><span>Collaboration, self-management, resilience, communication — the skills school assumes but rarely teaches, practiced daily until they're real.</span></div>
+          <div class="pillar-ic m">M</div>
+          <div><b>Professional</b><span>Thinking clearly, solving problems, and contributing on purpose.</span></div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-ic y"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
-          <div><b>Mentorship + CTE pathways</b><span>A coach in their corner and a real career direction.</span></div>
+          <div class="pillar-ic y">Y</div>
+          <div><b>Interpersonal</b><span>Healthy relationships and working well with other people.</span></div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-ic k"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-          <div><b>Outdoor experiential</b><span>Wasatch trails and hands-on learning as the classroom.</span></div>
+          <div class="pillar-ic k">K</div>
+          <div><b>Global</b><span>Communication and Resilience — sending meaning clearly and persisting through hard things.</span></div>
         </div>
       </div>
     </div>
@@ -288,13 +341,26 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="tag">The problem we're solving</span>
-      <h2>Capable teens are checking out — and the system can't reach them.</h2>
-      <p>Bright kids get lost in classrooms built for the average. Often it isn't the material — it's the invisible skills school never actually teaches: getting started, staying organized, following through. They don't need another lecture. They need a place that builds those skills and shows them real progress they can feel.</p>
+      <h2>Capable teens are checking out.</h2>
+      <p>Bright kids can do the work — and still feel like none of it connects to a real person or a real future. Scores show an outcome. They rarely show purpose, growth, or the full student.</p>
     </div>
-    <div class="stat-grid">
-      <div class="stat"><div class="n" style="color:var(--cyan)">1 in 3</div><p>high schoolers say they feel disengaged or "just going through the motions."</p></div>
-      <div class="stat"><div class="n" style="color:var(--magenta)">2×</div><p>faster mastery is possible with one-on-one, adaptive instruction versus a lecture pace.</p></div>
-      <div class="stat"><div class="n" style="color:#caa900">65%</div><p>of the jobs today's teens will hold reward skills and pathways school rarely teaches.</p></div>
+    <div class="provocation">
+      <div class="q">“Why am I <em>doing</em> this?”</div>
+      <p>That question shows up over worksheets, revisions, drills, and lectures. Left unanswered, it turns capable teens into students who are just going through the motions.</p>
+    </div>
+    <div class="problem-points">
+      <article>
+        <h3>Getting started</h3>
+        <p>Knowing what to do next is half the battle. School often assumes kids already have that muscle.</p>
+      </article>
+      <article>
+        <h3>Keeping track</h3>
+        <p>Materials, deadlines, and steps pile up. Without systems, even smart students look “unmotivated.”</p>
+      </article>
+      <article>
+        <h3>Following through</h3>
+        <p>Starting is not finishing. Kids need practice finishing hard things — with a coach, not another reminder app.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -303,28 +369,28 @@
 <section id="model">
   <div class="wrap">
     <div class="sec-head">
-      <span class="tag">The CMYK model</span>
+      <span class="tag">The school model</span>
       <h2>School, rebuilt around the student.</h2>
-      <p>We kept the parts of high school that change a life and rebuilt the rest — four elements that layer together like process inks into a full-color education.</p>
+      <p>We kept the parts of high school that change a life and rebuilt the rest — AI for academics, coaches for the human work, pathways into the real world, and time outside.</p>
     </div>
     <div class="grid-4">
       <div class="card">
-        <div class="ic c"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5L21 12M3 16.5L12 21l9-4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5L21 12M3 16.5L12 21l9-4.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
         <h3>Focused, personalized academics</h3>
-        <p>Best-in-class AI tutors deliver core academics one-on-one, adapting to each student's pace and gaps — including fast credit recovery and an accelerated path for those ready to move. Master more in two focused hours than a whole day of lectures.</p>
+        <p>AI tutors deliver core academics one-on-one, adapting to each student's pace and gaps — including credit recovery and acceleration when they're ready.</p>
       </div>
       <div class="card">
-        <div class="ic m"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.8"/></svg></div>
         <h3>Human skills, taught on purpose</h3>
-        <p>Collaboration, self-management, resilience, communication — the skills colleges and employers actually ask for, and the ones traditional school leaves to chance. Here they're taught directly and practiced daily, so students can see themselves growing instead of just chasing a grade.</p>
+        <p>Getting started, staying organized, communicating, and persisting — practiced with a live coach until students can run their own systems.</p>
       </div>
       <div class="card">
-        <div class="ic y"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
-        <h3>Mentorship + CTE pathways</h3>
-        <p>Every student has a dedicated coach who knows them and holds a high bar — plus a real career direction. CTE pathways connect learning to skilled trades, tech, design, and business through hands-on work.</p>
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.2" fill="currentColor"/></svg></div>
+        <h3>Mentorship + real-world pathways</h3>
+        <p>Every student has a dedicated coach who knows them and holds a high bar — plus hands-on pathways into design, tech, trades, business, and internships.</p>
       </div>
       <div class="card">
-        <div class="ic k"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20l6-14 4 8 3-5 5 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
         <h3>Outdoor experiential learning</h3>
         <p>The Wasatch is our second campus. Weekly expeditions, service, and hands-on challenges build resilience, teamwork, and a body that's as engaged as the mind.</p>
       </div>
@@ -332,32 +398,76 @@
   </div>
 </section>
 
-<!-- CTE PATHWAYS -->
-<section class="band" id="pathways">
+<!-- HUMAN SKILLS / CREDENTIAL -->
+<section class="band" id="skills">
   <div class="wrap">
     <div class="sec-head">
-      <span class="tag">Career &amp; technical education</span>
-      <h2>A real direction — not just a diploma.</h2>
-      <p>Every student explores CTE pathways that turn "why does this matter?" into "I'm building something." Real skills, real credentials, real momentum toward work worth doing.</p>
+      <span class="tag">Human skills made visible</span>
+      <h2>Everyday work becomes evidence of growth.</h2>
+      <p>The math homework doesn't change. What changes is its relevance. Students see how real work becomes evidence of a skill — and how repeated evidence becomes growth they own.</p>
     </div>
     <div class="grid-4">
       <div class="card">
-        <div class="ic c"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3M9 9h6v6H9z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <div class="ic c"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 8l4-4 4 4M8 16l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Personal — Cyan</h3>
+        <p>A strong desire to learn — and the systems to keep track of time, materials, and goals so that desire turns into finished work.</p>
+        <div class="chips"><span>Passion</span><span>Self Management</span></div>
+      </div>
+      <div class="card">
+        <div class="ic m"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19l4-14h3l4 14h-3l-.8-3H7.8L7 19H4zm4.5-6h3L10 7.5 8.5 13zM15 19v-2.2c1.8-.4 3-1.7 3-3.3 0-2.2-1.8-3.5-4.4-3.5H12v2h1.5c1.3 0 2 .6 2 1.5s-.7 1.5-2 1.5H12V19h3z" fill="currentColor"/></svg></div>
+        <h3>Professional — Magenta</h3>
+        <p>Abstract thinking, problem solving, and practical tasks — plus the habit of adding real value to a team and improving the culture around you.</p>
+        <div class="chips"><span>Cognitively &amp; Technically Able</span><span>Makes Positive Contributions</span></div>
+      </div>
+      <div class="card">
+        <div class="ic y"><svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <h3>Interpersonal — Yellow</h3>
+        <p>Meaningful connections that help both people grow — practiced in seminars, projects, and everyday collaboration.</p>
+        <div class="chips"><span>Develops Healthy Relationships</span></div>
+      </div>
+      <div class="card">
+        <div class="ic k"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4v8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Global — Black</h3>
+        <p>Sending and receiving meaning clearly — and building the resilience to take meaningful risks, adapt, and persist.</p>
+        <div class="chips"><span>Communication</span><span>Resilience</span></div>
+      </div>
+    </div>
+    <div class="growth-scale" aria-label="Growth scale">
+      <span>Growth scale</span>
+      <span class="active">Emerging</span>
+      <span class="active">Developed</span>
+      <span class="active">Solidified</span>
+    </div>
+    <p style="margin-top:16px; color:var(--muted); max-width:68ch; font-size:15px;">Ratings are earned through demonstrated evidence over time — not awarded for completing an assignment. Coaches, AI academics, and real projects create the evidence. The credential makes the growth visible to the student and to parents.</p>
+  </div>
+</section>
+
+<!-- PATHWAYS -->
+<section id="pathways">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Real-world pathways</span>
+      <h2>A real direction — not just a diploma.</h2>
+      <p>Pathways help turn “Why am I doing this?” into “I'm building something.” Hands-on work, internships, and credentials that connect learning to a future worth caring about.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3M9 9h6v6H9z" stroke="currentColor" stroke-width="1.7"/></svg></div>
         <h3>Design &amp; digital media</h3>
         <p>Graphic design, video, and creative tools — a natural fit for visual, creative thinkers.</p>
       </div>
       <div class="card">
-        <div class="ic m"><svg viewBox="0 0 24 24" fill="none"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Technology &amp; making</h3>
         <p>Coding, robotics, and hands-on AI — building real things and learning to make AI a tool you command.</p>
       </div>
       <div class="card">
-        <div class="ic y"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-6h4v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-6h4v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
         <h3>Skilled trades &amp; business</h3>
         <p>Entrepreneurship, construction, and the trades — pathways to independence and real earning.</p>
       </div>
       <div class="card">
-        <div class="ic k"><svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <div class="ic neutral"><svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5" stroke="currentColor" stroke-width="1.7"/></svg></div>
         <h3>Internships &amp; certifications</h3>
         <p>Work-based learning and industry credentials that mean something after graduation.</p>
       </div>
@@ -366,12 +476,12 @@
 </section>
 
 <!-- SPLIT -->
-<section id="taught">
+<section class="band" id="taught">
   <div class="wrap">
     <div class="sec-head">
       <span class="tag">Taught by AI · coached by humans</span>
       <h2>The best of both — nothing lost between them.</h2>
-      <p>The AI delivers the academics — patient, one-on-one, at each student's exact pace. That frees our coaches from lecturing and grading to spend the whole day on what only people can do: motivate, mentor, and genuinely know a kid.</p>
+      <p>The AI delivers the academics. That frees our coaches to do what only people can do: help students start the work, build systems, stay with hard things, and grow human skills on purpose.</p>
     </div>
     <div class="split">
       <div class="split-card ai">
@@ -381,19 +491,19 @@
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> One-on-one instruction that never rushes or leaves a gap</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Adapts in real time to how each student learns</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Mastery-based — including fast credit recovery and acceleration</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Mastery-based — including credit recovery and acceleration</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Frees the day for projects, people, pathways, and the outdoors</li>
         </ul>
       </div>
       <div class="split-card human">
         <span class="kicker">The Live Coach</span>
-        <h3>Motivates the human</h3>
-        <p class="mut">Freed from lecturing — all in on the student.</p>
+        <h3>Builds the human skills</h3>
+        <p class="mut">In person — routines, plans, and follow-through.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Never lectures — the AI teaches, so the coach goes all in on the student</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Fuels motivation, confidence, and a genuinely high bar</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Helps students start the work and break goals into steps</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Builds systems for time, materials, and focus — not phone reminder stacks</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Knows each student's goals, struggles, and what makes them tick</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Leads the human-skills work — character, relationships, and real-world projects</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Leads human-skills practice until students can run their own systems</li>
         </ul>
       </div>
     </div>
@@ -401,28 +511,28 @@
 </section>
 
 <!-- HOW -->
-<section class="band" id="how">
+<section id="how">
   <div class="wrap">
     <div class="sec-head">
       <span class="tag">A day at CMYK</span>
       <h2>Own your day. Master the work.</h2>
-      <p>There's no rigid bell schedule. Students build the day from three kinds of blocks and choose how to arrange them — lead with academics, start with an internship or rec, or sleep in and come for the afternoon. What never flexes is mastery: the work gets done, and done well.</p>
+      <p>There's no rigid bell schedule. Students build the day from three kinds of blocks and choose how to arrange them — lead with academics, start with an internship or rec, or come for the afternoon. What never flexes is mastery: the work gets done, and done well.</p>
     </div>
     <div class="how">
       <div class="step">
         <div class="num">1</div>
         <h3>Deep-focus academics</h3>
-        <p>Personalized, mastery-based coursework with an AI tutor and a coach close by — students move on only once they've truly got it, with fast credit recovery or acceleration when they're ready.</p>
+        <p>Personalized, mastery-based coursework with an AI tutor and a coach close by — students move on only once they've truly got it.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
         <h3>Seminars &amp; human skills</h3>
-        <p>Live, coach-facilitated discussion, collaboration, and real projects — where teens practice communication, teamwork, and thinking out loud.</p>
+        <p>Live, coach-facilitated discussion, collaboration, and real projects — where teens practice communication, teamwork, planning, and follow-through.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
         <h3>Pathways, rec &amp; the outdoors</h3>
-        <p>CTE projects, internships, recreation, weekly field days, and Wasatch expeditions — learning that moves into the real world, plus time to breathe.</p>
+        <p>Hands-on pathway projects, internships, recreation, weekly field days, and Wasatch expeditions — learning that moves into the real world.</p>
       </div>
     </div>
   </div>
@@ -434,18 +544,18 @@
     <div>
       <span class="tag">Founding families</span>
       <h2>Join the waitlist.</h2>
-      <p class="lead">We're enrolling a small founding cohort in Lehi, Utah. Add your family to the waitlist for first access, invitations to info sessions, and a voice in what we build.</p>
+      <p class="lead">Get early access and updates on enrollment and launch. We're building a small founding cohort in Lehi, Utah — and waitlist families hear first.</p>
       <ul class="wl-perks">
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority admission for founding families</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Early access to enrollment and launch updates</li>
         <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Invitations to parent &amp; student info nights</li>
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Founding-family tuition consideration</li>
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> No commitment — just early access and updates</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority consideration for the founding cohort</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> No commitment — just a place on the list</li>
       </ul>
     </div>
 
     <div class="form-card">
       <form id="waitlistForm" novalidate>
-        <h3>Reserve your spot</h3>
+        <h3>Join the waitlist</h3>
         <p>Takes under a minute. We'll be in touch soon.</p>
         <div class="row2">
           <div class="field">
@@ -502,31 +612,35 @@
     <div style="max-width:820px;">
       <details open>
         <summary>Why "CMYK"? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>CMYK is the four inks — cyan, magenta, yellow, and black — that layer together to make every color you've ever seen. It's how we see our students: each one distinct, each essential, and capable of far more in combination than any single track allows. It also nods to the creative, hands-on, design-and-make spirit of our CTE pathways.</p>
+        <p>CMYK is the four inks — cyan, magenta, yellow, and black — that layer together to make every color you've ever seen. At CMYK High, those colors map to human skill families: Personal, Professional, Interpersonal, and Global. Students grow across all four, and the combination is what makes a full person — not a single track.</p>
       </details>
       <details>
         <summary>Who is CMYK High the right fit for? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>Capable teens who've become bored, disengaged, or lost in a traditional classroom — especially kids who struggle with the executive-function skills school assumes but never teaches: focus, organization, time management, and follow-through. It's also a fit for students recovering credits, ready to accelerate, or who simply learn differently. If your student is capable but "checked out," this was built for them.</p>
+        <p>Capable teens who've become bored, disengaged, or lost in a traditional classroom — especially kids who ask “Why am I doing this?” and who need help with the everyday skills school assumes but rarely teaches: getting started, keeping track of work and materials, managing time, and finishing what they start. It's also a fit for students recovering credits, ready to accelerate, or who simply learn differently.</p>
+      </details>
+      <details>
+        <summary>What do you mean by human skills? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
+        <p>Human skills are the Personal, Professional, Interpersonal, and Global competencies that sit alongside academics — things like Self Management, Communication, Resilience, and contributing on a team. Coaches practice them with students in person through routines, plans, and real projects. We don't outsource that work to phone apps or reminder stacks.</p>
       </details>
       <details>
         <summary>Where is the school located? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
         <p>CMYK High is based in Lehi, Utah, on the Wasatch Front — with the mountains, canyons, and rivers of northern Utah serving as our outdoor campus for weekly field days and expeditions.</p>
       </details>
       <details>
-        <summary>What are CTE pathways? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>Career &amp; Technical Education pathways connect academics to real careers — design and digital media, technology and making, skilled trades and business — through hands-on projects, internships, and industry credentials. They give students a reason for the work and a head start on a future.</p>
+        <summary>What are pathways? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
+        <p>Pathways connect academics to real direction — design and digital media, technology and making, skilled trades and business — through hands-on projects, internships, and industry credentials. They help students answer “Why am I doing this?” with work that leads somewhere.</p>
       </details>
       <details>
         <summary>Will students learn to use AI themselves — not just learn from it? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>Yes — it's core to how we prepare students for what's next. There's a real difference between learning <em>from</em> AI and learning to <em>use</em> it, and we teach both. Alongside their AI tutor, students get hands-on training in AI as a powerful tool and thinking partner — for personal projects and professional work alike: how to prompt it well, pressure-test what it gives back, and apply it to real writing, research, design, coding, and problem-solving. They graduate with the practical AI fluency colleges and employers now expect, plus the judgment to use it wisely and honestly.</p>
+        <p>Yes. There's a real difference between learning <em>from</em> AI and learning to <em>use</em> it, and we teach both. Alongside their AI tutor, students get hands-on practice using AI as a tool and thinking partner — how to prompt it well, pressure-test what it gives back, and apply it to writing, research, design, coding, and problem-solving.</p>
       </details>
       <details>
         <summary>Do the skill credentials replace grades or a transcript? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>No. Transcripts still serve their purpose. Alongside them, students turn everyday coursework into evidence of growth in the human skills a GPA was never designed to show — self-management, resilience, communication, and more — and build credentials they own and can share with colleges, scholarship committees, and employers. The credentials <em>supplement</em> the transcript; they don't replace it.</p>
+        <p>No. Transcripts still serve their purpose. Alongside them, students turn everyday coursework and projects into evidence of growth in human skills a GPA was never designed to show. Ratings like Emerging, Developed, and Solidified are earned through demonstrated evidence over time. Students own the credential; the system authenticates it. The credentials <em>supplement</em> the transcript — they don't replace it.</p>
       </details>
       <details>
         <summary>How big are the cohorts? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
-        <p>Small by design. We keep cohorts intentionally limited so every student is truly known by their coach and mentors. Our founding class is especially small — one reason to join the waitlist early.</p>
+        <p>Small by design. We keep cohorts intentionally limited so every student is truly known by their coach. Our founding class is especially small — one reason to join the waitlist early.</p>
       </details>
       <details>
         <summary>What about accreditation, tuition, and a diploma? <span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary>
@@ -551,7 +665,8 @@
         <div>
           <h4>Explore</h4>
           <a href="#model">The Model</a>
-          <a href="#pathways">CTE Pathways</a>
+          <a href="#skills">Human Skills</a>
+          <a href="#pathways">Pathways</a>
           <a href="#how">How It Works</a>
           <a href="#faq">FAQ</a>
         </div>
@@ -565,7 +680,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 CMYK High · Lehi, Utah</span>
-      <span>Personalized academics · Human skills · Mentorship · CTE · Outdoor learning</span>
+      <span>Personalized academics · Human skills · Mentorship · Pathways · Outdoor learning</span>
     </div>
   </div>
 </footer>
@@ -602,8 +717,7 @@
       entries.push(entry);
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify(entries)); } catch (e) {}
 
-      var spot = 27 + entries.length;
-      spotEl.textContent = "You're #" + spot + " on the founding waitlist";
+      spotEl.textContent = "You're on the founding waitlist";
 
       function showSuccess() {
         form.style.display = 'none';

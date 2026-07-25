@@ -51,6 +51,7 @@
   .nav-links { display: flex; gap: 30px; align-items: center; font-size: 15px; font-weight: 500; }
   .nav-links a { color: var(--muted); transition: color .2s; }
   .nav-links a:hover { color: var(--ink); }
+  .nav-cta { display: flex; gap: 10px; align-items: center; }
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     background: var(--key); color: #fff; padding: 12px 22px; border-radius: 999px;
@@ -64,7 +65,12 @@
   .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
   .btn.ghost:hover { background: var(--ink); color: #fff; }
   .nav-links .btn { color: #fff; }
-  @media (max-width: 820px) { .nav-links a:not(.btn) { display: none; } }
+  .nav-links .btn.ghost { color: var(--ink); background: transparent; }
+  .nav-links .btn.ghost:hover { color: #fff; background: var(--ink); }
+  @media (max-width: 820px) {
+    .nav-links a:not(.btn) { display: none; }
+    .nav-cta .btn { padding: 10px 14px; font-size: 13.5px; }
+  }
 
   /* HERO */
   .hero { position: relative; overflow: hidden; background: var(--key); color: #fff; }
@@ -284,7 +290,10 @@
       <a href="#pathways">Pathways</a>
       <a href="#how">How It Works</a>
       <a href="#faq">FAQ</a>
-      <a href="#waitlist" class="btn">Join the Waitlist</a>
+      <div class="nav-cta">
+        <a href="business.html" class="btn ghost">Partner With Us</a>
+        <a href="#waitlist" class="btn">Join the Waitlist</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -673,6 +682,7 @@
         <div>
           <h4>Get involved</h4>
           <a href="#waitlist">Join the Waitlist</a>
+          <a href="business.html">Partner With Us</a>
           <a href="#waitlist">Info Sessions</a>
           <a href="mailto:hello@cmykhigh.com">Contact Us</a>
         </div>

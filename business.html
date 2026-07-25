@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Partner With Us — Design Your Intern | CMYK High</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="description" content="Utah businesses: design a high school intern role around CMYK human skills. Commit to a partnership spot starting Spring 2028." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cyan: #00A6E6;
+    --magenta: #EC0B8C;
+    --yellow: #FFD400;
+    --key: #14141a;
+    --ink: #14141a;
+    --muted: #5c5c68;
+    --paper: #ffffff;
+    --paper-2: #f5f5f2;
+    --line: rgba(20, 20, 26, 0.12);
+    --shadow: 0 22px 60px -24px rgba(20, 20, 26, 0.4);
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink); background: var(--paper); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .brand { font-family: 'Space Grotesk', system-ui, sans-serif; line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+
+  .mark { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 26px; height: 26px; flex: none; }
+  .mark span { border-radius: 50%; display: block; width: 100%; aspect-ratio: 1; }
+  .mark .c { background: var(--cyan); }
+  .mark .m { background: var(--magenta); }
+  .mark .y { background: var(--yellow); }
+  .mark .k { background: var(--key); }
+
+  header.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 11px; font-size: 20px; font-weight: 700; }
+  .nav-cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--key); color: #fff; padding: 12px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; border: none; cursor: pointer;
+    transition: transform .15s ease, background .2s ease; font-family: 'Inter', sans-serif;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.magenta { background: var(--magenta); color: #fff; }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: #fff; }
+  .btn:disabled { opacity: .55; cursor: wait; transform: none; }
+
+  .hero {
+    position: relative; overflow: hidden; background: var(--key); color: #fff;
+    padding: 72px 0 84px;
+  }
+  .hero .bars { position: absolute; top: 0; left: 0; right: 0; height: 6px; display: flex; }
+  .hero .bars i { flex: 1; }
+  .hero .bars .c { background: var(--cyan); } .hero .bars .m { background: var(--magenta); }
+  .hero .bars .y { background: var(--yellow); } .hero .bars .k { background: #3a3a44; }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(620px 380px at 12% 0%, rgba(0,166,230,.28), transparent 60%),
+      radial-gradient(560px 360px at 90% 20%, rgba(236,11,140,.24), transparent 62%),
+      radial-gradient(640px 400px at 50% 120%, rgba(255,212,0,.14), transparent 58%);
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 720px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px; font-size: 12.5px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase; color: #cdd3da;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16);
+    padding: 7px 14px; border-radius: 999px; margin-bottom: 22px;
+  }
+  .hero h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 700; }
+  .hero h1 .c { color: var(--cyan); } .hero h1 .m { color: var(--magenta); } .hero h1 .y { color: var(--yellow); }
+  .hero p.lead { margin-top: 20px; font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: rgba(255,255,255,.78); max-width: 46ch; }
+  .hero-cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-cta .btn.ghost { color: #fff; border-color: rgba(255,255,255,.45); }
+  .hero-cta .btn.ghost:hover { background: #fff; color: var(--ink); }
+
+  section { padding: 78px 0; }
+  .band { background: var(--paper-2); }
+  .sec-head { max-width: 720px; margin-bottom: 40px; }
+  .sec-head .tag { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--magenta); }
+  .sec-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); margin-top: 12px; }
+  .sec-head p { font-size: 1.08rem; color: var(--muted); margin-top: 14px; }
+
+  .timeline {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  @media (max-width: 820px) { .timeline { grid-template-columns: 1fr; } }
+  .timeline article {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .timeline article:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .timeline .when {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px;
+    letter-spacing: .04em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .timeline .when.c { color: var(--cyan); }
+  .timeline .when.m { color: var(--magenta); }
+  .timeline .when.y { color: #b89700; }
+  .timeline h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .timeline p { color: var(--muted); font-size: 15px; }
+
+  .flow {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  @media (max-width: 900px) { .flow { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .flow { grid-template-columns: 1fr; } }
+  .flow .step {
+    border-top: 3px solid var(--key); padding-top: 16px;
+  }
+  .flow .step:nth-child(1) { border-color: var(--cyan); }
+  .flow .step:nth-child(2) { border-color: var(--magenta); }
+  .flow .step:nth-child(3) { border-color: var(--yellow); }
+  .flow .n { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .flow h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .flow p { font-size: 14.5px; color: var(--muted); }
+
+  .facts {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 28px;
+    max-width: 820px;
+  }
+  @media (max-width: 640px) { .facts { grid-template-columns: 1fr; } }
+  .facts li {
+    list-style: none; display: flex; gap: 12px; align-items: flex-start;
+    font-size: 15.5px; color: var(--muted);
+  }
+  .facts b { color: var(--ink); }
+  .facts svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--magenta); }
+
+  .form-shell {
+    background: #fff; border: 1px solid var(--line); border-radius: 20px;
+    padding: clamp(24px, 4vw, 40px); box-shadow: var(--shadow);
+  }
+  .form-block { margin-bottom: 42px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+  .form-block:last-of-type { border-bottom: none; margin-bottom: 24px; padding-bottom: 0; }
+  .form-block h3 { font-size: 1.45rem; margin-bottom: 8px; }
+  .form-block > .hint { color: var(--muted); font-size: 15px; margin-bottom: 22px; max-width: 65ch; }
+
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 720px) { .row2, .row3 { grid-template-columns: 1fr; } }
+
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 6px; }
+  .field .req { color: var(--magenta); }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 11px;
+    font-family: inherit; font-size: 15px; color: var(--ink); background: #fff;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--magenta); box-shadow: 0 0 0 3px rgba(236,11,140,.14);
+  }
+  .field .note { margin-top: 6px; font-size: 12.5px; color: var(--muted); }
+  .check-row {
+    display: flex; gap: 10px; align-items: flex-start; margin: 12px 0 4px;
+    font-size: 14.5px; color: var(--ink);
+  }
+  .check-row input { margin-top: 3px; width: 17px; height: 17px; accent-color: var(--magenta); }
+
+  .scale-legend {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px;
+  }
+  .scale-legend span {
+    font-size: 12.5px; font-weight: 600; padding: 7px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--paper-2);
+  }
+
+  .skill {
+    border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px 16px;
+    margin-bottom: 14px; background: #fff;
+    transition: opacity .25s ease, background .25s ease, border-color .25s ease;
+  }
+  .skill.na { opacity: .42; background: var(--paper-2); }
+  .skill.na .slider-wrap { pointer-events: none; }
+  .skill-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 8px; }
+  .skill-meta .family {
+    font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .skill-meta .family.c { color: var(--cyan); }
+  .skill-meta .family.m { color: var(--magenta); }
+  .skill-meta .family.y { color: #b89700; }
+  .skill-meta .family.k { color: var(--key); }
+  .skill-meta h4 { font-size: 1.15rem; font-family: 'Space Grotesk', sans-serif; }
+  .skill-meta p { margin-top: 6px; font-size: 13.5px; color: var(--muted); max-width: 52ch; }
+  .skill-value {
+    text-align: right; min-width: 96px;
+  }
+  .skill-value .num {
+    font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1;
+    transition: color .2s;
+  }
+  .skill.c .skill-value .num { color: var(--cyan); }
+  .skill.m .skill-value .num { color: var(--magenta); }
+  .skill.y .skill-value .num { color: #c9a800; }
+  .skill.k .skill-value .num { color: var(--key); }
+  .skill-value .label {
+    margin-top: 4px; font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted);
+  }
+  .na-toggle {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--muted);
+    cursor: pointer; user-select: none; white-space: nowrap;
+  }
+  .na-toggle input { width: 16px; height: 16px; accent-color: var(--key); }
+
+  .slider-wrap { margin-top: 14px; }
+  .slider-wrap input[type="range"] {
+    -webkit-appearance: none; appearance: none; width: 100%; height: 8px; border-radius: 999px;
+    background: linear-gradient(90deg, #d7d7dc, #d7d7dc);
+    outline: none; cursor: pointer;
+  }
+  .skill.c .slider-wrap input[type="range"] {
+    background: linear-gradient(90deg, var(--cyan), rgba(0,166,230,.25));
+  }
+  .skill.m .slider-wrap input[type="range"] {
+    background: linear-gradient(90deg, var(--magenta), rgba(236,11,140,.22));
+  }
+  .skill.y .slider-wrap input[type="range"] {
+    background: linear-gradient(90deg, var(--yellow), rgba(255,212,0,.28));
+  }
+  .skill.k .slider-wrap input[type="range"] {
+    background: linear-gradient(90deg, #3a3a44, rgba(20,20,26,.18));
+  }
+  .slider-wrap input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%;
+    background: #fff; border: 3px solid var(--ink); box-shadow: 0 4px 12px rgba(20,20,26,.18);
+    transition: transform .15s ease;
+  }
+  .slider-wrap input[type="range"]::-moz-range-thumb {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: #fff; border: 3px solid var(--ink); box-shadow: 0 4px 12px rgba(20,20,26,.18);
+  }
+  .skill.c .slider-wrap input[type="range"]::-webkit-slider-thumb { border-color: var(--cyan); }
+  .skill.m .slider-wrap input[type="range"]::-webkit-slider-thumb { border-color: var(--magenta); }
+  .skill.y .slider-wrap input[type="range"]::-webkit-slider-thumb { border-color: #c9a800; }
+  .skill.k .slider-wrap input[type="range"]::-webkit-slider-thumb { border-color: var(--key); }
+  .slider-wrap input[type="range"]:hover::-webkit-slider-thumb { transform: scale(1.08); }
+  .ticks {
+    display: flex; justify-content: space-between; margin-top: 8px;
+    font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: .02em;
+  }
+  .skill-note { margin-top: 12px; }
+  .skill-note textarea { min-height: 64px; resize: vertical; }
+
+  .notice {
+    background: var(--paper-2); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px; font-size: 14.5px; color: var(--muted); margin-bottom: 18px;
+  }
+  .notice strong { color: var(--ink); }
+
+  .form-actions { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+  .form-actions .btn { width: 100%; padding: 16px; font-size: 16px; }
+  .form-note { font-size: 12.5px; color: var(--muted); text-align: center; }
+
+  .form-success { display: none; text-align: center; padding: 36px 12px; }
+  .form-success .badge {
+    width: 64px; height: 64px; border-radius: 50%; background: rgba(236,11,140,.12);
+    color: var(--magenta); display: grid; place-items: center; margin: 0 auto 16px;
+  }
+  .form-success .badge svg { width: 30px; height: 30px; }
+  .form-success h3 { font-size: 1.7rem; }
+  .form-success p { color: var(--muted); margin-top: 10px; max-width: 46ch; margin-left: auto; margin-right: auto; }
+
+  footer { background: var(--key); color: rgba(255,255,255,.66); padding: 42px 0 28px; }
+  .foot-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer .brand { color: #fff; }
+  footer a:hover { color: var(--cyan); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <span class="mark"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></span>
+      <span class="name">CMYK High</span>
+    </a>
+    <div class="nav-cta">
+      <a href="index.html" class="btn ghost">For Families</a>
+      <a href="#design" class="btn magenta">Design Your Intern</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="bars"><i class="c"></i><i class="m"></i><i class="y"></i><i class="k"></i></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Utah businesses · Partnership commitment</span>
+    <h1>Design your <span class="c">intern</span>. <span class="m">Commit</span> to a <span class="y">spot</span>.</h1>
+    <p class="lead">Tell us the role, the duties, and the CMYK human-skill bar you need. We’ll train students toward stronger applicants — then match you with candidates who bring credentials and evidence.</p>
+    <div class="hero-cta">
+      <a href="#design" class="btn magenta">Start the partnership form →</a>
+      <a href="#how-it-works" class="btn ghost">How it works</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="vision">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">The partnership vision</span>
+      <h2>A real role during the school day — designed by you.</h2>
+      <p>Selected students come on-site Monday through Thursday for about a 2.5-hour block (schedule open to adjust). They work the role you design. Internships are unpaid. Students handle their own transportation.</p>
+    </div>
+    <ul class="facts">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><b>You design the intern.</b> Duties, skill bar, duration, and how many seats you’ll hold.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><b>Students apply with proof.</b> Applications plus CMYK skills credentials with evidence.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><b>You decide who to accept.</b> CMYK prepares applicants; your team makes the call.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><b>Agreements protect both sides.</b> CMYK provides a student/family/business contract on safety and supervision. You’re welcome to add your own.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Timeline</span>
+      <h2>We’re building the pipeline before day one on site.</h2>
+      <p>CMYK High plans to open Fall 2027 with a founding class of about 100. The first semester focuses on training human skills and building credentials — so Spring 2028 partners get stronger applicants.</p>
+    </div>
+    <div class="timeline">
+      <article>
+        <div class="when c">Fall 2027</div>
+        <h3>School opens</h3>
+        <p>Small founding class. Students train in CMYK skills and begin building credentials with real evidence.</p>
+      </article>
+      <article>
+        <div class="when m">Spring 2028</div>
+        <h3>First internships</h3>
+        <p>Earliest partnership term. Students apply with credentials; businesses select who joins their team.</p>
+      </article>
+      <article>
+        <div class="when y">Over time</div>
+        <h3>Stronger applicants</h3>
+        <p>Each term, training deepens. Later cohorts arrive with more practice, clearer evidence, and higher readiness.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how-it-works">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">How it works</span>
+      <h2>From partnership commitment to a student on your floor.</h2>
+    </div>
+    <div class="flow">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Commit a spot</h3>
+        <p>Submit this form: role, skill bar, seats, and term. That holds your partnership interest with CMYK.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>We prepare students</h3>
+        <p>Through Fall 2027 and beyond, students train skills and gather evidence against the CMYK credential.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Role goes live</h3>
+        <p>When our student platform launches, your position becomes a listing students can apply to.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>You choose</h3>
+        <p>Review applications and credentials. Accept the intern(s) who fit the role you designed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Design your intern</span>
+      <h2>Tell us what you’re committing to.</h2>
+      <p>Simple and clear — so CMYK High and your team both know the role, the skill bar, and the logistics.</p>
+    </div>
+
+    <div class="form-shell">
+      <form id="partnerForm" novalidate>
+        <div class="form-block">
+          <h3>Business identity</h3>
+          <p class="hint">Who you are and where the student will work.</p>
+          <div class="row2">
+            <div class="field">
+              <label for="companyName">Company name <span class="req">*</span></label>
+              <input id="companyName" name="companyName" required placeholder="Acme Design Co." />
+            </div>
+            <div class="field">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="url" placeholder="https://" />
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="industry">Industry <span class="req">*</span></label>
+              <input id="industry" name="industry" required placeholder="Software, construction, media…" />
+            </div>
+            <div class="field">
+              <label for="worksite">Worksite address <span class="req">*</span></label>
+              <input id="worksite" name="worksite" required placeholder="Street, City, UT ZIP" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <h3>Primary contact</h3>
+          <p class="hint">Who CMYK should reach about this partnership.</p>
+          <div class="row3">
+            <div class="field">
+              <label for="contactName">Name <span class="req">*</span></label>
+              <input id="contactName" name="contactName" required placeholder="Alex Morgan" />
+            </div>
+            <div class="field">
+              <label for="contactEmail">Email <span class="req">*</span></label>
+              <input id="contactEmail" name="contactEmail" type="email" required placeholder="alex@company.com" />
+            </div>
+            <div class="field">
+              <label for="contactPhone">Phone <span class="req">*</span></label>
+              <input id="contactPhone" name="contactPhone" type="tel" required placeholder="(801) 555-0134" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <h3>On-site supervisor</h3>
+          <p class="hint">Optional if different from the primary contact. This is who the student reports to day to day.</p>
+          <div class="row3">
+            <div class="field">
+              <label for="supervisorName">Name</label>
+              <input id="supervisorName" name="supervisorName" placeholder="Same as primary contact" />
+            </div>
+            <div class="field">
+              <label for="supervisorEmail">Email</label>
+              <input id="supervisorEmail" name="supervisorEmail" type="email" placeholder="supervisor@company.com" />
+            </div>
+            <div class="field">
+              <label for="supervisorPhone">Phone</label>
+              <input id="supervisorPhone" name="supervisorPhone" type="tel" placeholder="(801) 555-0199" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <h3>Role logistics</h3>
+          <p class="hint">Internships are unpaid. Students are responsible for transportation. Roles are expected on-site unless you note otherwise.</p>
+          <div class="notice">
+            <strong>Schedule:</strong> Students come during the school day, Monday–Thursday, for about a 2.5-hour chunk. Exact timing can flex with your operation and our calendar.
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="startTerm">Starting term <span class="req">*</span></label>
+              <select id="startTerm" name="startTerm" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Spring 2028</option>
+                <option>Fall 2028</option>
+                <option>Spring 2029</option>
+                <option>Fall 2029</option>
+                <option>Spring 2030</option>
+                <option>Fall 2030</option>
+                <option>Spring 2031</option>
+                <option>Fall 2031</option>
+              </select>
+              <p class="note">Earliest term is Spring 2028 — after a Fall 2027 semester of skills training.</p>
+            </div>
+            <div class="field">
+              <label for="duration">Internship length <span class="req">*</span></label>
+              <select id="duration" name="duration" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="Quarter (9 weeks)">Quarter (9 weeks)</option>
+                <option value="Semester (18 weeks)">Semester (18 weeks)</option>
+              </select>
+              <p class="note">Follows CMYK High’s academic calendar.</p>
+            </div>
+          </div>
+          <div class="row3">
+            <div class="field">
+              <label for="internCount">How many interns will you accept? <span class="req">*</span></label>
+              <input id="internCount" name="internCount" type="number" min="1" max="50" step="1" required placeholder="1" />
+            </div>
+            <div class="field">
+              <label for="locationType">Work arrangement <span class="req">*</span></label>
+              <select id="locationType" name="locationType" required>
+                <option value="On-site" selected>On-site</option>
+                <option value="Mostly on-site / hybrid">Mostly on-site / hybrid</option>
+                <option value="Remote (exception)">Remote (exception)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="compensation">Compensation</label>
+              <input id="compensation" name="compensation" value="Unpaid" readonly />
+              <p class="note">All CMYK High internships are unpaid in this program.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="dressCode">Dress code <span class="req">*</span></label>
+            <input id="dressCode" name="dressCode" required placeholder="Business casual, closed-toe shoes, branded shirt provided…" />
+            <p class="note">Students care about this — be specific.</p>
+          </div>
+          <div class="field">
+            <label for="duties">Intern duties <span class="req">*</span></label>
+            <textarea id="duties" name="duties" rows="5" required placeholder="What will the student do day to day? Tools they’ll use, projects they’ll support, who they’ll work with…"></textarea>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <h3>Minimum CMYK skill levels</h3>
+          <p class="hint">Set the minimum level an intern should already show for each skill that matters to this role. Scale: <strong>1.0 Dormant</strong> · <strong>2.0 Emerging</strong> · <strong>3.0 Developed</strong> · <strong>4.0 Solidified</strong>. Check <em>Not applicable</em> to dim skills that don’t matter for this position.</p>
+          <div class="scale-legend">
+            <span>1.0 Dormant</span>
+            <span>2.0 Emerging</span>
+            <span>3.0 Developed</span>
+            <span>4.0 Solidified</span>
+          </div>
+          <div id="skillsRoot"></div>
+        </div>
+
+        <div class="form-block">
+          <h3>Agreements &amp; other details</h3>
+          <p class="hint">CMYK High will provide a written agreement covering safety, supervision, and expectations for the student/family and the business. You’re welcome to add a contract of your own.</p>
+          <div class="field">
+            <label for="otherInfo">Anything else we should know?</label>
+            <textarea id="otherInfo" name="otherInfo" rows="4" placeholder="Equipment provided, industry restrictions, NDA needs, parking, preferred hours inside the 2.5-hour window…"></textarea>
+          </div>
+          <label class="check-row">
+            <input type="checkbox" id="commitSpot" name="commitSpot" required />
+            <span>I am committing interest in holding <strong>internship spot(s)</strong> for the term and role described above. I understand CMYK will follow up to confirm details and agreements. <span class="req">*</span></span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" id="agreeContract" name="agreeContract" required />
+            <span>I understand a CMYK-provided student/family/business agreement on safety and supervision will be required before a student starts, and our company may add its own agreement. <span class="req">*</span></span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn magenta" id="submitBtn">Commit partnership interest →</button>
+          <p class="form-note">By submitting you agree to receive follow-up from CMYK High about this partnership. We never sell your information.</p>
+        </div>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Partnership interest received.</h3>
+        <p>Thanks — we’ve logged your role design and spot commitment. CMYK High will follow up to confirm details, agreements, and next steps toward a Spring 2028+ placement.</p>
+        <p style="margin-top:18px;"><a href="index.html" class="btn ghost">Back to CMYK High</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <a href="index.html" class="brand">
+      <span class="mark"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></span>
+      <span class="name">CMYK High</span>
+    </a>
+    <div>
+      <a href="index.html">For Families</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:hello@cmykhigh.com">hello@cmykhigh.com</a>
+      &nbsp;·&nbsp;
+      <span>© 2026 CMYK High</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var LEVELS = {
+    1: 'Dormant',
+    2: 'Emerging',
+    3: 'Developed',
+    4: 'Solidified'
+  };
+
+  var SKILLS = [
+    {
+      id: 'passion',
+      family: 'Personal',
+      color: 'c',
+      name: 'Passion',
+      definition: 'A strong desire to learn for learning’s sake — performing, competing, achieving, understanding, or creating.'
+    },
+    {
+      id: 'selfManagement',
+      family: 'Personal',
+      color: 'c',
+      name: 'Self Management',
+      definition: 'Systems for time, materials, and focus — following steps to a goal and staying well enough to do the work.'
+    },
+    {
+      id: 'cognitivelyTechnicallyAble',
+      family: 'Professional',
+      color: 'm',
+      name: 'Cognitively & Technically Able',
+      definition: 'Abstract thinking, problem solving, reasoning, and practical tasks — building connections between ideas.'
+    },
+    {
+      id: 'makesPositiveContributions',
+      family: 'Professional',
+      color: 'm',
+      name: 'Makes Positive Contributions',
+      definition: 'Understanding a team’s desired result and intentionally adding strength, skill, or knowledge — improving culture.'
+    },
+    {
+      id: 'developsHealthyRelationships',
+      family: 'Interpersonal',
+      color: 'y',
+      name: 'Develops Healthy Relationships',
+      definition: 'Establish and grow meaningful connections that provide mutual growth and happiness.'
+    },
+    {
+      id: 'socialConsciousness',
+      family: 'Interpersonal',
+      color: 'y',
+      name: 'Social Consciousness',
+      definition: 'Awareness of community impact and responsibility in how work affects people beyond yourself.'
+    },
+    {
+      id: 'communication',
+      family: 'Global',
+      color: 'k',
+      name: 'Communication',
+      definition: 'Effective sending and receiving of meaning through written, spoken, and visual messages.'
+    },
+    {
+      id: 'resilience',
+      family: 'Global',
+      color: 'k',
+      name: 'Resilience',
+      definition: 'Overcoming challenges, taking meaningful risks, adapting, and persisting through uncertainty.'
+    }
+  ];
+
+  function levelLabel(value) {
+    var n = Math.round(Number(value));
+    if (n < 1) n = 1;
+    if (n > 4) n = 4;
+    return LEVELS[n] || '';
+  }
+
+  function renderSkills() {
+    var root = document.getElementById('skillsRoot');
+    root.innerHTML = SKILLS.map(function (skill) {
+      return (
+        '<div class="skill ' + skill.color + '" data-skill="' + skill.id + '">' +
+          '<div class="skill-top">' +
+            '<div class="skill-meta">' +
+              '<div class="family ' + skill.color + '">' + skill.family + '</div>' +
+              '<h4>' + skill.name + '</h4>' +
+              '<p>' + skill.definition + '</p>' +
+            '</div>' +
+            '<div>' +
+              '<label class="na-toggle"><input type="checkbox" data-na="' + skill.id + '" /> Not applicable</label>' +
+              '<div class="skill-value" data-value-wrap="' + skill.id + '">' +
+                '<div class="num" data-num="' + skill.id + '">2.0</div>' +
+                '<div class="label" data-label="' + skill.id + '">Emerging</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="slider-wrap">' +
+            '<input type="range" min="1" max="4" step="0.1" value="2.0" data-slider="' + skill.id + '" aria-label="' + skill.name + ' minimum level" />' +
+            '<div class="ticks"><span>1.0</span><span>2.0</span><span>3.0</span><span>4.0</span></div>' +
+          '</div>' +
+          '<div class="field skill-note">' +
+            '<label for="note-' + skill.id + '">Optional note for this skill</label>' +
+            '<textarea id="note-' + skill.id + '" data-note="' + skill.id + '" rows="2" placeholder="What does this look like in your workplace?"></textarea>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+
+    root.querySelectorAll('[data-slider]').forEach(function (slider) {
+      var id = slider.getAttribute('data-slider');
+      var numEl = root.querySelector('[data-num="' + id + '"]');
+      var labelEl = root.querySelector('[data-label="' + id + '"]');
+      function sync() {
+        var v = Number(slider.value).toFixed(1);
+        numEl.textContent = v;
+        labelEl.textContent = levelLabel(v);
+      }
+      slider.addEventListener('input', sync);
+      sync();
+    });
+
+    root.querySelectorAll('[data-na]').forEach(function (box) {
+      box.addEventListener('change', function () {
+        var id = box.getAttribute('data-na');
+        var card = root.querySelector('[data-skill="' + id + '"]');
+        var slider = root.querySelector('[data-slider="' + id + '"]');
+        card.classList.toggle('na', box.checked);
+        slider.disabled = box.checked;
+      });
+    });
+  }
+
+  function collectSkills() {
+    return SKILLS.map(function (skill) {
+      var na = document.querySelector('[data-na="' + skill.id + '"]').checked;
+      var slider = document.querySelector('[data-slider="' + skill.id + '"]');
+      var note = document.querySelector('[data-note="' + skill.id + '"]').value.trim();
+      return {
+        id: skill.id,
+        name: skill.name,
+        family: skill.family,
+        applicable: !na,
+        minimumLevel: na ? null : Number(Number(slider.value).toFixed(1)),
+        minimumLabel: na ? 'Not applicable' : levelLabel(slider.value),
+        note: note
+      };
+    });
+  }
+
+  renderSkills();
+
+  var form = document.getElementById('partnerForm');
+  var success = document.getElementById('formSuccess');
+  var submitBtn = document.getElementById('submitBtn');
+  var STORAGE_KEY = 'cmyk_business_partners';
+
+  // Google Apps Script Web App endpoint (writes to the business-partners sheet + notification emails).
+  // Deploy scripts/business-partner.gs, then paste the /exec URL here.
+  var ENDPOINT = '';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var applicableSkills = collectSkills().filter(function (s) { return s.applicable; });
+    if (applicableSkills.length === 0) {
+      alert('Please set a minimum level for at least one CMYK skill (or leave it applicable). A role needs at least one relevant skill.');
+      return;
+    }
+
+    var entry = {
+      type: 'business_partner',
+      companyName: form.companyName.value.trim(),
+      website: form.website.value.trim(),
+      industry: form.industry.value.trim(),
+      worksite: form.worksite.value.trim(),
+      contactName: form.contactName.value.trim(),
+      contactEmail: form.contactEmail.value.trim(),
+      contactPhone: form.contactPhone.value.trim(),
+      supervisorName: form.supervisorName.value.trim(),
+      supervisorEmail: form.supervisorEmail.value.trim(),
+      supervisorPhone: form.supervisorPhone.value.trim(),
+      startTerm: form.startTerm.value,
+      duration: form.duration.value,
+      internCount: Number(form.internCount.value),
+      locationType: form.locationType.value,
+      compensation: 'Unpaid',
+      dressCode: form.dressCode.value.trim(),
+      duties: form.duties.value.trim(),
+      otherInfo: form.otherInfo.value.trim(),
+      skills: collectSkills(),
+      commitSpot: !!form.commitSpot.checked,
+      agreeContract: !!form.agreeContract.checked,
+      submittedAt: new Date().toISOString()
+    };
+
+    try {
+      var existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      existing.push(entry);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+    } catch (err) {}
+
+    function showSuccess() {
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    if (ENDPOINT) {
+      fetch(ENDPOINT, {
+        method: 'POST',
+        body: JSON.stringify(entry)
+      }).then(showSuccess).catch(showSuccess);
+    } else {
+      showSuccess();
+    }
+  });
+})();
+</script>
+</body>
+</html>

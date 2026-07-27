@@ -417,15 +417,9 @@
               <input id="website" name="website" type="url" placeholder="https://" />
             </div>
           </div>
-          <div class="row2">
-            <div class="field">
-              <label for="industry">Industry <span class="req">*</span></label>
-              <input id="industry" name="industry" required placeholder="Software, construction, media…" />
-            </div>
-            <div class="field">
-              <label for="worksite">Worksite address <span class="req">*</span></label>
-              <input id="worksite" name="worksite" required placeholder="Street, City, UT ZIP" />
-            </div>
+          <div class="field">
+            <label for="worksite">Worksite address <span class="req">*</span></label>
+            <input id="worksite" name="worksite" required placeholder="Street, City, UT ZIP" />
           </div>
         </div>
 
@@ -497,6 +491,31 @@
                 <option value="Semester (18 weeks)">Semester (18 weeks)</option>
               </select>
               <p class="note">Follows CMYK High’s academic calendar.</p>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="industry">Industry <span class="req">*</span></label>
+              <select id="industry" name="industry" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Technology / Software</option>
+                <option>Design / Creative / Media</option>
+                <option>Marketing / Advertising</option>
+                <option>Engineering</option>
+                <option>Construction / Skilled Trades</option>
+                <option>Manufacturing</option>
+                <option>Healthcare</option>
+                <option>Finance / Professional Services</option>
+                <option>Education / Nonprofit</option>
+                <option>Retail / Hospitality</option>
+                <option>Government / Public Sector</option>
+                <option>Agriculture / Outdoor / Recreation</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field" id="industryOtherField" hidden>
+              <label for="industryOther">Describe your industry <span class="req">*</span></label>
+              <input id="industryOther" name="industryOther" placeholder="Type your industry" />
             </div>
           </div>
           <div class="row3">
@@ -744,7 +763,26 @@
   var form = document.getElementById('partnerForm');
   var success = document.getElementById('formSuccess');
   var submitBtn = document.getElementById('submitBtn');
+  var industrySelect = document.getElementById('industry');
+  var industryOtherField = document.getElementById('industryOtherField');
+  var industryOtherInput = document.getElementById('industryOther');
   var STORAGE_KEY = 'cmyk_business_partners';
+
+  function syncIndustryOther() {
+    var isOther = industrySelect.value === 'Other';
+    industryOtherField.hidden = !isOther;
+    industryOtherInput.required = isOther;
+    if (!isOther) industryOtherInput.value = '';
+  }
+  industrySelect.addEventListener('change', syncIndustryOther);
+  syncIndustryOther();
+
+  function resolvedIndustry() {
+    if (industrySelect.value === 'Other') {
+      return 'Other: ' + industryOtherInput.value.trim();
+    }
+    return industrySelect.value;
+  }
 
   // Google Apps Script Web App endpoint (writes to the business-partners sheet + notification emails).
   // Deploy scripts/business-partner.gs, then paste the /exec URL here.
@@ -753,6 +791,12 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    if (industrySelect.value === 'Other' && !industryOtherInput.value.trim()) {
+      industryOtherInput.focus();
+      industryOtherInput.reportValidity();
+      return;
+    }
 
     var applicableSkills = collectSkills().filter(function (s) { return s.applicable; });
     if (applicableSkills.length === 0) {
@@ -764,7 +808,9 @@
       type: 'business_partner',
       companyName: form.companyName.value.trim(),
       website: form.website.value.trim(),
-      industry: form.industry.value.trim(),
+      industry: resolvedIndustry(),
+      industryCategory: industrySelect.value,
+      industryOther: industrySelect.value === 'Other' ? industryOtherInput.value.trim() : '',
       worksite: form.worksite.value.trim(),
       contactName: form.contactName.value.trim(),
       contactEmail: form.contactEmail.value.trim(),

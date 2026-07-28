@@ -182,10 +182,27 @@
   .skill {
     border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px 16px;
     margin-bottom: 14px; background: #fff;
-    transition: opacity .25s ease, background .25s ease, border-color .25s ease;
+    transition: padding .25s ease, margin .25s ease, background .25s ease, border-color .25s ease, opacity .25s ease;
   }
-  .skill.na { opacity: .42; background: var(--paper-2); }
-  .skill.na .slider-wrap { pointer-events: none; }
+  .skill.na {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: var(--paper-2);
+    opacity: .85;
+  }
+  .skill.na .skill-meta p,
+  .skill.na .skill-value,
+  .skill.na .slider-wrap,
+  .skill.na .skill-note {
+    display: none;
+  }
+  .skill.na .skill-top {
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .skill.na .skill-meta h4 {
+    font-size: 1rem;
+  }
   .skill-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 8px; }
   .skill-meta .family {
     font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
@@ -555,7 +572,7 @@
 
         <div class="form-block">
           <h3>Minimum CMYK skill levels</h3>
-          <p class="hint">Set the minimum level an intern should already show for each skill that matters to this role. Scale: <strong>1.0 Dormant</strong> · <strong>2.0 Emerging</strong> · <strong>3.0 Developed</strong> · <strong>4.0 Solidified</strong>. Check <em>Not applicable</em> to dim skills that don’t matter for this position.</p>
+          <p class="hint">Set the minimum level an intern should already show for each skill that matters to this role. Scale: <strong>1.0 Dormant</strong> · <strong>2.0 Emerging</strong> · <strong>3.0 Developed</strong> · <strong>4.0 Solidified</strong>. Check <em>Not applicable</em> to collapse skills that don’t matter for this position.</p>
           <div class="scale-legend">
             <span>1.0 Dormant</span>
             <span>2.0 Emerging</span>
@@ -740,8 +757,11 @@
         var id = box.getAttribute('data-na');
         var card = root.querySelector('[data-skill="' + id + '"]');
         var slider = root.querySelector('[data-slider="' + id + '"]');
+        var note = root.querySelector('[data-note="' + id + '"]');
         card.classList.toggle('na', box.checked);
         slider.disabled = box.checked;
+        if (box.checked && note) note.value = '';
+        box.setAttribute('aria-expanded', box.checked ? 'false' : 'true');
       });
     });
   }

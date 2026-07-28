@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Partner With Us — Design Your Intern | CMYK High</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<meta name="description" content="Utah businesses: design a high school intern role around CMYK human skills. Commit to a partnership spot starting Spring 2028." />
+<meta name="description" content="Utah businesses: design a high school intern role and unlock rising talent with CMYK human skills. Partnerships start Spring 2028." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -182,10 +182,27 @@
   .skill {
     border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px 16px;
     margin-bottom: 14px; background: #fff;
-    transition: opacity .25s ease, background .25s ease, border-color .25s ease;
+    transition: padding .25s ease, margin .25s ease, background .25s ease, border-color .25s ease, opacity .25s ease;
   }
-  .skill.na { opacity: .42; background: var(--paper-2); }
-  .skill.na .slider-wrap { pointer-events: none; }
+  .skill.na {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: var(--paper-2);
+    opacity: .85;
+  }
+  .skill.na .skill-meta p,
+  .skill.na .skill-value,
+  .skill.na .slider-wrap,
+  .skill.na .skill-note {
+    display: none;
+  }
+  .skill.na .skill-top {
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .skill.na .skill-meta h4 {
+    font-size: 1rem;
+  }
   .skill-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 8px; }
   .skill-meta .family {
     font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
@@ -223,16 +240,16 @@
     outline: none; cursor: pointer;
   }
   .skill.c .slider-wrap input[type="range"] {
-    background: linear-gradient(90deg, var(--cyan), rgba(0,166,230,.25));
+    background: linear-gradient(90deg, rgba(0,166,230,.25), var(--cyan));
   }
   .skill.m .slider-wrap input[type="range"] {
-    background: linear-gradient(90deg, var(--magenta), rgba(236,11,140,.22));
+    background: linear-gradient(90deg, rgba(236,11,140,.22), var(--magenta));
   }
   .skill.y .slider-wrap input[type="range"] {
-    background: linear-gradient(90deg, var(--yellow), rgba(255,212,0,.28));
+    background: linear-gradient(90deg, rgba(255,212,0,.28), var(--yellow));
   }
   .skill.k .slider-wrap input[type="range"] {
-    background: linear-gradient(90deg, #3a3a44, rgba(20,20,26,.18));
+    background: linear-gradient(90deg, rgba(20,20,26,.18), #3a3a44);
   }
   .slider-wrap input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%;
@@ -299,8 +316,8 @@
   <div class="bars"><i class="c"></i><i class="m"></i><i class="y"></i><i class="k"></i></div>
   <div class="wrap hero-inner">
     <span class="eyebrow">Utah businesses · Partnership commitment</span>
-    <h1>Design your <span class="c">intern</span>. <span class="m">Commit</span> to a <span class="y">spot</span>.</h1>
-    <p class="lead">Tell us the role, the duties, and the CMYK human-skill bar you need. We’ll train students toward stronger applicants — then match you with candidates who bring credentials and evidence.</p>
+    <h1>Design your <span class="c">intern</span>. Unlock <span class="m">rising</span> <span class="y">talent</span>.</h1>
+    <p class="lead">Yes, they’re young — and they’re the upcoming generation, with energy, knowledge, and skills ready to put to work. Tell us the role and the CMYK skill bar you need; we’ll match you with candidates who bring credentials and evidence.</p>
     <div class="hero-cta">
       <a href="#design" class="btn magenta">Start the partnership form →</a>
       <a href="#how-it-works" class="btn ghost">How it works</a>
@@ -313,7 +330,7 @@
     <div class="sec-head">
       <span class="tag">The partnership vision</span>
       <h2>A real role during the school day — designed by you.</h2>
-      <p>Selected students come on-site Monday through Thursday for about a 2.5-hour block (schedule open to adjust). They work the role you design. Internships are unpaid. Students handle their own transportation.</p>
+      <p>Selected students come on-site Monday through Thursday for about a 2.5-hour block (schedule open to adjust). They work the role you design. Students handle their own transportation.</p>
     </div>
     <ul class="facts">
       <li>
@@ -417,15 +434,9 @@
               <input id="website" name="website" type="url" placeholder="https://" />
             </div>
           </div>
-          <div class="row2">
-            <div class="field">
-              <label for="industry">Industry <span class="req">*</span></label>
-              <input id="industry" name="industry" required placeholder="Software, construction, media…" />
-            </div>
-            <div class="field">
-              <label for="worksite">Worksite address <span class="req">*</span></label>
-              <input id="worksite" name="worksite" required placeholder="Street, City, UT ZIP" />
-            </div>
+          <div class="field">
+            <label for="worksite">Worksite address <span class="req">*</span></label>
+            <input id="worksite" name="worksite" required placeholder="Street, City, UT ZIP" />
           </div>
         </div>
 
@@ -469,7 +480,7 @@
 
         <div class="form-block">
           <h3>Role logistics</h3>
-          <p class="hint">Internships are unpaid. Students are responsible for transportation. Roles are expected on-site unless you note otherwise.</p>
+          <p class="hint">Students are responsible for transportation. Roles are expected on-site unless you note otherwise.</p>
           <div class="notice">
             <strong>Schedule:</strong> Students come during the school day, Monday–Thursday, for about a 2.5-hour chunk. Exact timing can flex with your operation and our calendar.
           </div>
@@ -499,6 +510,31 @@
               <p class="note">Follows CMYK High’s academic calendar.</p>
             </div>
           </div>
+          <div class="row2">
+            <div class="field">
+              <label for="industry">Industry <span class="req">*</span></label>
+              <select id="industry" name="industry" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Technology / Software</option>
+                <option>Design / Creative / Media</option>
+                <option>Marketing / Advertising</option>
+                <option>Engineering</option>
+                <option>Construction / Skilled Trades</option>
+                <option>Manufacturing</option>
+                <option>Healthcare</option>
+                <option>Finance / Professional Services</option>
+                <option>Education / Nonprofit</option>
+                <option>Retail / Hospitality</option>
+                <option>Government / Public Sector</option>
+                <option>Agriculture / Outdoor / Recreation</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field" id="industryOtherField" hidden>
+              <label for="industryOther">Describe your industry <span class="req">*</span></label>
+              <input id="industryOther" name="industryOther" placeholder="Type your industry" />
+            </div>
+          </div>
           <div class="row3">
             <div class="field">
               <label for="internCount">How many interns will you accept? <span class="req">*</span></label>
@@ -513,9 +549,14 @@
               </select>
             </div>
             <div class="field">
-              <label for="compensation">Compensation</label>
-              <input id="compensation" name="compensation" value="Unpaid" readonly />
-              <p class="note">All CMYK High internships are unpaid in this program.</p>
+              <label for="compensation">Compensation <span class="req">*</span></label>
+              <select id="compensation" name="compensation" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Paid</option>
+                <option>Unpaid</option>
+                <option>Stipend</option>
+                <option>To be discussed</option>
+              </select>
             </div>
           </div>
           <div class="field">
@@ -531,7 +572,7 @@
 
         <div class="form-block">
           <h3>Minimum CMYK skill levels</h3>
-          <p class="hint">Set the minimum level an intern should already show for each skill that matters to this role. Scale: <strong>1.0 Dormant</strong> · <strong>2.0 Emerging</strong> · <strong>3.0 Developed</strong> · <strong>4.0 Solidified</strong>. Check <em>Not applicable</em> to dim skills that don’t matter for this position.</p>
+          <p class="hint">Set the minimum level an intern should already show for each skill that matters to this role. Scale: <strong>1.0 Dormant</strong> · <strong>2.0 Emerging</strong> · <strong>3.0 Developed</strong> · <strong>4.0 Solidified</strong>. Check <em>Not applicable</em> to collapse skills that don’t matter for this position.</p>
           <div class="scale-legend">
             <span>1.0 Dormant</span>
             <span>2.0 Emerging</span>
@@ -716,8 +757,11 @@
         var id = box.getAttribute('data-na');
         var card = root.querySelector('[data-skill="' + id + '"]');
         var slider = root.querySelector('[data-slider="' + id + '"]');
+        var note = root.querySelector('[data-note="' + id + '"]');
         card.classList.toggle('na', box.checked);
         slider.disabled = box.checked;
+        if (box.checked && note) note.value = '';
+        box.setAttribute('aria-expanded', box.checked ? 'false' : 'true');
       });
     });
   }
@@ -744,7 +788,26 @@
   var form = document.getElementById('partnerForm');
   var success = document.getElementById('formSuccess');
   var submitBtn = document.getElementById('submitBtn');
+  var industrySelect = document.getElementById('industry');
+  var industryOtherField = document.getElementById('industryOtherField');
+  var industryOtherInput = document.getElementById('industryOther');
   var STORAGE_KEY = 'cmyk_business_partners';
+
+  function syncIndustryOther() {
+    var isOther = industrySelect.value === 'Other';
+    industryOtherField.hidden = !isOther;
+    industryOtherInput.required = isOther;
+    if (!isOther) industryOtherInput.value = '';
+  }
+  industrySelect.addEventListener('change', syncIndustryOther);
+  syncIndustryOther();
+
+  function resolvedIndustry() {
+    if (industrySelect.value === 'Other') {
+      return 'Other: ' + industryOtherInput.value.trim();
+    }
+    return industrySelect.value;
+  }
 
   // Google Apps Script Web App endpoint (writes to the business-partners sheet + notification emails).
   // Deploy scripts/business-partner.gs, then paste the /exec URL here.
@@ -753,6 +816,12 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    if (industrySelect.value === 'Other' && !industryOtherInput.value.trim()) {
+      industryOtherInput.focus();
+      industryOtherInput.reportValidity();
+      return;
+    }
 
     var applicableSkills = collectSkills().filter(function (s) { return s.applicable; });
     if (applicableSkills.length === 0) {
@@ -764,7 +833,9 @@
       type: 'business_partner',
       companyName: form.companyName.value.trim(),
       website: form.website.value.trim(),
-      industry: form.industry.value.trim(),
+      industry: resolvedIndustry(),
+      industryCategory: industrySelect.value,
+      industryOther: industrySelect.value === 'Other' ? industryOtherInput.value.trim() : '',
       worksite: form.worksite.value.trim(),
       contactName: form.contactName.value.trim(),
       contactEmail: form.contactEmail.value.trim(),
@@ -776,7 +847,7 @@
       duration: form.duration.value,
       internCount: Number(form.internCount.value),
       locationType: form.locationType.value,
-      compensation: 'Unpaid',
+      compensation: form.compensation.value,
       dressCode: form.dressCode.value.trim(),
       duties: form.duties.value.trim(),
       otherInfo: form.otherInfo.value.trim(),

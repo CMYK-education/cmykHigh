@@ -121,16 +121,13 @@
   .sec-head p { font-size: 1.12rem; color: var(--muted); margin-top: 16px; }
   .band { background: var(--paper-2); }
 
-  /* FEATURED VIDEO */
-  .feature-video {
-    background: var(--key);
-    color: #fff;
-    padding: 72px 0 80px;
+  /* FEATURED VIDEO (in hero) */
+  .hero .video-box {
+    width: 100%;
+    margin: 28px 0 0;
+    border-radius: 16px;
+    box-shadow: 0 22px 50px -24px rgba(0,0,0,.55);
   }
-  .feature-video .sec-head { margin-bottom: 28px; }
-  .feature-video .sec-head .tag { color: var(--yellow); }
-  .feature-video .sec-head h2 { color: #fff; }
-  .feature-video .sec-head p { color: rgba(255,255,255,.72); }
   .video-box {
     position: relative;
     width: min(960px, 100%);
@@ -179,6 +176,8 @@
     box-shadow: 0 18px 40px -12px rgba(236,11,140,.7);
     transition: transform .18s ease, background .18s ease;
   }
+  .hero .play-btn { width: 72px; height: 72px; }
+  .hero .play-btn svg { width: 28px; height: 28px; }
   .play-btn svg { width: 34px; height: 34px; margin-left: 4px; }
   .video-poster:hover .play-btn { transform: scale(1.07); background: #ff2ba0; }
   .video-poster:focus-visible {
@@ -197,6 +196,7 @@
     color: #fff;
     text-shadow: 0 2px 12px rgba(0,0,0,.45);
   }
+  .hero .video-poster .play-label { left: 16px; bottom: 14px; font-size: 13px; }
 
   /* PROBLEM PROVOCATION */
   .provocation {
@@ -388,7 +388,25 @@
       <p class="lead">CMYK High is a small, independent high school for capable but disengaged teens — personalized AI academics, live coaches, human skills you can see grow, and time in the real world.</p>
       <div class="hero-cta">
         <a href="#waitlist" class="btn magenta">Join the Waitlist →</a>
-        <a href="#watch" class="btn ghost" style="color:#fff; border-color:rgba(255,255,255,.45);">Watch: Because Skills</a>
+        <a href="#model" class="btn ghost" style="color:#fff; border-color:rgba(255,255,255,.45);">See How It Works</a>
+      </div>
+      <div class="video-box" id="skillsVideoBox">
+        <video
+          id="skillsVideo"
+          playsinline
+          preload="metadata"
+          poster="media/because-skills-poster.jpg"
+          title="CMYK High — Because Skills"
+        >
+          <source src="media/because-skills.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
+        <button type="button" class="video-poster" id="skillsPlayBtn" aria-label="Play Because Skills video">
+          <span class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="play-label">Play video · 0:22</span>
+        </button>
       </div>
       <div class="hero-meta">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8" stroke-width="2"/></svg> Small cohorts with dedicated coaches</span>
@@ -418,35 +436,6 @@
           <div><b>Global</b><span>Communication and Resilience — sending meaning clearly and persisting through hard things.</span></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED VIDEO -->
-<section class="feature-video" id="watch">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag">Because. Skills.</span>
-      <h2>Why am I doing this?</h2>
-      <p>A short look at how CMYK makes the answer visible — through human skills, evidence, and growth you can see.</p>
-    </div>
-    <div class="video-box" id="skillsVideoBox">
-      <video
-        id="skillsVideo"
-        playsinline
-        preload="metadata"
-        poster="media/because-skills-poster.jpg"
-        title="CMYK High — Because Skills"
-      >
-        <source src="media/because-skills.mp4" type="video/mp4" />
-        Your browser does not support embedded video.
-      </video>
-      <button type="button" class="video-poster" id="skillsPlayBtn" aria-label="Play Because Skills video">
-        <span class="play-btn" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-        <span class="play-label">Play video · 0:22</span>
-      </button>
     </div>
   </div>
 </section>

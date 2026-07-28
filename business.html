@@ -313,7 +313,7 @@
     <div class="sec-head">
       <span class="tag">The partnership vision</span>
       <h2>A real role during the school day — designed by you.</h2>
-      <p>Selected students come on-site Monday through Thursday for about a 2.5-hour block (schedule open to adjust). They work the role you design. Internships are unpaid. Students handle their own transportation.</p>
+      <p>Selected students come on-site Monday through Thursday for about a 2.5-hour block (schedule open to adjust). They work the role you design. Students handle their own transportation.</p>
     </div>
     <ul class="facts">
       <li>
@@ -463,7 +463,7 @@
 
         <div class="form-block">
           <h3>Role logistics</h3>
-          <p class="hint">Internships are unpaid. Students are responsible for transportation. Roles are expected on-site unless you note otherwise.</p>
+          <p class="hint">Students are responsible for transportation. Roles are expected on-site unless you note otherwise.</p>
           <div class="notice">
             <strong>Schedule:</strong> Students come during the school day, Monday–Thursday, for about a 2.5-hour chunk. Exact timing can flex with your operation and our calendar.
           </div>
@@ -532,9 +532,14 @@
               </select>
             </div>
             <div class="field">
-              <label for="compensation">Compensation</label>
-              <input id="compensation" name="compensation" value="Unpaid" readonly />
-              <p class="note">All CMYK High internships are unpaid in this program.</p>
+              <label for="compensation">Compensation <span class="req">*</span></label>
+              <select id="compensation" name="compensation" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Paid</option>
+                <option>Unpaid</option>
+                <option>Stipend</option>
+                <option>To be discussed</option>
+              </select>
             </div>
           </div>
           <div class="field">
@@ -822,7 +827,7 @@
       duration: form.duration.value,
       internCount: Number(form.internCount.value),
       locationType: form.locationType.value,
-      compensation: 'Unpaid',
+      compensation: form.compensation.value,
       dressCode: form.dressCode.value.trim(),
       duties: form.duties.value.trim(),
       otherInfo: form.otherInfo.value.trim(),

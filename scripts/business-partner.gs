@@ -68,7 +68,7 @@ function flattenPartner(data) {
     data.duration || '',
     data.internCount || '',
     data.locationType || '',
-    data.compensation || 'Unpaid',
+    data.compensation || '',
     data.dressCode || '',
     data.duties || '',
     skillSummary,

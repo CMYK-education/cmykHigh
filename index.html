@@ -121,6 +121,34 @@
   .sec-head p { font-size: 1.12rem; color: var(--muted); margin-top: 16px; }
   .band { background: var(--paper-2); }
 
+  /* FEATURED VIDEO */
+  .feature-video {
+    background: var(--key);
+    color: #fff;
+    padding: 72px 0 80px;
+  }
+  .feature-video .sec-head { margin-bottom: 28px; }
+  .feature-video .sec-head .tag { color: var(--yellow); }
+  .feature-video .sec-head h2 { color: #fff; }
+  .feature-video .sec-head p { color: rgba(255,255,255,.72); }
+  .video-frame {
+    position: relative;
+    width: min(960px, 100%);
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px -28px rgba(0,0,0,.65);
+    background: #000;
+    aspect-ratio: 16 / 9;
+  }
+  .video-frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+
   /* PROBLEM PROVOCATION */
   .provocation {
     margin-top: 8px;
@@ -311,7 +339,7 @@
       <p class="lead">CMYK High is a small, independent high school for capable but disengaged teens — personalized AI academics, live coaches, human skills you can see grow, and time in the real world.</p>
       <div class="hero-cta">
         <a href="#waitlist" class="btn magenta">Join the Waitlist →</a>
-        <a href="#model" class="btn ghost" style="color:#fff; border-color:rgba(255,255,255,.45);">See How It Works</a>
+        <a href="#watch" class="btn ghost" style="color:#fff; border-color:rgba(255,255,255,.45);">Watch: Because Skills</a>
       </div>
       <div class="hero-meta">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8" stroke-width="2"/></svg> Small cohorts with dedicated coaches</span>
@@ -341,6 +369,29 @@
           <div><b>Global</b><span>Communication and Resilience — sending meaning clearly and persisting through hard things.</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED VIDEO -->
+<section class="feature-video" id="watch">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Because. Skills.</span>
+      <h2>Why am I doing this?</h2>
+      <p>A short look at how CMYK makes the answer visible — through human skills, evidence, and growth you can see.</p>
+    </div>
+    <div class="video-frame">
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="media/because-skills-poster.jpg"
+        title="CMYK High — Because Skills"
+      >
+        <source src="media/because-skills.mp4" type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
     </div>
   </div>
 </section>
